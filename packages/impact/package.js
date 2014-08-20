@@ -32,7 +32,8 @@ Package.on_use(function (api, where) {
   api.add_files([
 
     'client/utils/dateHelpers.js',
-    'client/utils/userLogic.js',
+    'client/utils/user.html',
+    'client/utils/admin.html',
 
     'client/dashboard/layout/_.lessimport',
     'client/dashboard/layout/adminLayout.html',

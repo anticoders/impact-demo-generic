@@ -1,0 +1,9 @@
+<template name="admin">
+  {{#if currentUser.admin}}
+    {{> UI.contentBlock}}
+  {{else}}
+    {{> UI.elseBlock}}
+  {{/if}}
+</template>
+
+

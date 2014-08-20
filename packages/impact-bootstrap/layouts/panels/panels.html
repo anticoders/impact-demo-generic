@@ -21,7 +21,7 @@
     <div class="panelsLayout-boxTopBar"></div>
     <div class="panelsLayout-boxTopMenu">
       {{#user}}
-        {{yield 'top'}}
+        {{> yield 'top'}}
         <a href="/users"><i class="fa fa-users"></i></a>
         <a href="/content"><i class="fa fa-pencil"></i></a>
         <a href="/profile"><i class="fa fa-user"></i></a>
@@ -29,7 +29,7 @@
       {{/user}}
     </div>
     <div class="panelsLayout-boxContent">
-      {{yield}}
+      {{> yield}}
     </div>
     <div class="panelsLayout-cookie">Obligatory legal warning: This site, as its owners, runs on cookies.</div>
   </div>
