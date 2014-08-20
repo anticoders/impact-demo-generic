@@ -7,7 +7,9 @@
       },
       "fake": {},
       "moment": {},
-      "unimark": {},
+      "unimark": {
+        "version": "0.4.0"
+      },
       "timestamp": {},
       "crater-modals": {}
     },
@@ -28,9 +30,9 @@
         "commit": "722ea63783d594341023836b7d418ab2567dab8c"
       },
       "unimark": {
-        "git": "https://github.com/subhog/meteor-unimark.git",
-        "tag": "v0.3.0",
-        "commit": "880eb747e3c692f181f20db4420644990cc95618"
+        "git": "https://github.com/anticoders/meteor-unimark.git",
+        "tag": "v0.4.0",
+        "commit": "b25bf5b9b9bdcf61f5b30170673f23816e93fc3e"
       },
       "timestamp": {
         "git": "https://github.com/subhog/meteor-timestamp.git",

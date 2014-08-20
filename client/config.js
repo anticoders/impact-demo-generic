@@ -10,9 +10,9 @@ Modules.Blog.load({
 });
 
 
-Modules.Dyna.load({
+// Modules.Dyna.load({
 
-});
+// });
 
 
 
