@@ -6,7 +6,10 @@
         "version": "0.8.2"
       },
       "fake": {},
-      "moment": {}
+      "moment": {},
+      "unimark": {},
+      "timestamp": {},
+      "crater-modals": {}
     },
     "packages": {
       "iron-router": {
@@ -23,6 +26,21 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.8.1",
         "commit": "722ea63783d594341023836b7d418ab2567dab8c"
+      },
+      "unimark": {
+        "git": "https://github.com/subhog/meteor-unimark.git",
+        "tag": "v0.3.0",
+        "commit": "880eb747e3c692f181f20db4420644990cc95618"
+      },
+      "timestamp": {
+        "git": "https://github.com/subhog/meteor-timestamp.git",
+        "tag": "v0.1.1",
+        "commit": "474419e8707f55b4b1719108824b636bead623c6"
+      },
+      "crater-modals": {
+        "git": "https://github.com/subhog/meteor-crater-modals.git",
+        "tag": "v0.0.5",
+        "commit": "95c9bf009b44d1aa190243bd5b254c8dc6f42951"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

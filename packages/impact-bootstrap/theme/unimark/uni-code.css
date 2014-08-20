@@ -1,0 +1,40 @@
+.uni-code-desc,
+.uni-code-code,
+.uni-code-result {
+  border: 0px;
+  border-radius: 0px;
+  padding: 10px 20px;
+  margin: 20px 0px;
+}
+
+.uni-code-desc {
+  color: #f8f8f8;
+  background: #c0c0c0;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 18px;
+  padding: 0px 10px;
+}
+
+.uni-code-code {
+  background: #303030;
+  color: #f0f0f0;
+}
+
+.uni-code-result {
+  background: #ffffff;
+  color: #303030;
+}
+
+
+
+.uni-code-terminal {
+  margin: 20px 0px;
+}
+
+.uni-code-terminal .uni-code-code,
+.uni-code-terminal .uni-code-result,
+.uni-code-terminal .uni-code-desc {
+  margin: 0px;
+}
+

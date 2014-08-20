@@ -1,0 +1,55 @@
+
+@contentBg:       #f8f8f8;
+@contentColor:    #303030;
+@contentNote:     #d0d0d0;
+
+
+@helperBg:        #f4f4f4;
+@helperColor:     #d0d0d0;
+@helperNote:      #e0e0e0;
+
+
+@accentBg:        #d0d0d0;
+@accentColor:     #303030;
+@acccentNote:     #808080;
+
+
+@primary:         #c00030;
+
+/*
+@obsidian:      #505050;
+@gray:          #d0d0d0;
+@lightGray:     #e0e0e0;
+@white:         #f8f8f8;
+
+
+@grayOnDark:    #888888;
+@whiteOnDark:   #f0f0f0;
+
+@blackOnGray:   #303030;
+
+@blackOnWhite:  #202020;
+@grayOnWhite:   #d0d0d0;
+@red:           #c00030;
+*/
+
+@ex-max:    479px;
+@xs-min:    480px;
+@xs-max:    767px;
+@sm-min:    768px;
+@sm-max:    991px;
+@md-min:    992px;
+@md-max:    1199px;
+@lg-min:    1200px;
+@lg-max:    1599px;
+@xl-min:    1600px;
+
+.animated {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+
+

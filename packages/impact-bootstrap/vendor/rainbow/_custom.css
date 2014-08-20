@@ -1,0 +1,89 @@
+pre {
+  color: #f0f0f0;
+}
+
+pre span {
+  color: #00ffff;
+}
+
+pre .Clueword {
+  color: #ff4040;
+}
+
+pre .Keyword {
+  color: #ff9040;
+}
+
+pre .FirstOperand {
+  /*color: #40c0ff;*/
+  color: #70d0ff;
+}
+
+pre .Operator {
+  color: #ff4040;
+}
+
+pre .Directive {
+  color: #ff9040;
+}
+
+pre .Directive.Keyword {
+ color: #ff4040; 
+}
+
+pre .String {
+  color: #ffff60;
+}
+
+pre .Type {
+  color: #ff9040; 
+}
+
+pre .String.Escaped {
+  color: #c040ff;
+}
+
+pre .Value {
+  color: #c040ff;
+}
+
+pre .Comment {
+  color: #707070;
+}
+
+pre .Regex {
+  color: #c040ff; 
+}
+
+pre .Regex.Escaped {
+  color: #ff4040;
+}
+
+pre .GeneratedOperand {
+  color: #c0ff40;
+}
+
+pre .Entity {
+  color: #ff4040;
+}
+
+pre .Property {
+  color: #ff9040;
+}
+
+pre .OCFunction {
+  color: #ffff60;
+}
+
+pre .OCString {
+  color: #c040ff;
+}
+
+pre .OCString.Escaped {
+  color: #ff4040;
+}
+
+
+
+
+

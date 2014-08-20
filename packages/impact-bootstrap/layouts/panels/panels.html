@@ -1,0 +1,50 @@
+
+<template name="panelsLayout">
+
+
+  <div class="panelsLayout-cover">
+    <div class="panelsLayout-coverTitle">{{cover.title}}</div>
+    <div class="panelsLayout-coverCard">
+      <div class="panelsLayout-coverImage"><img src="{{cover.image}}"/></div>
+      <div class="panelsLayout-coverBlurb">{{cover.blurb}}</div>
+    </div>
+    <div class="panelsLayout-coverMenu">
+      &middot;
+      {{#each cover.menu}}
+        <a href="{{this.url}}">{{this.label}}</a>
+        &middot;
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="panelsLayout-box">
+    <div class="panelsLayout-boxTopBar"></div>
+    <div class="panelsLayout-boxTopMenu">
+      {{#user}}
+        {{yield 'top'}}
+        <a href="/users"><i class="fa fa-users"></i></a>
+        <a href="/content"><i class="fa fa-pencil"></i></a>
+        <a href="/profile"><i class="fa fa-user"></i></a>
+        <a href="javascript: Meteor.logout();">Sign out</a>
+      {{/user}}
+    </div>
+    <div class="panelsLayout-boxContent">
+      {{yield}}
+    </div>
+    <div class="panelsLayout-cookie">Obligatory legal warning: This site, as its owners, runs on cookies.</div>
+  </div>
+
+  <div class="panelsLayout-bottom">
+    <div class="panelsLayout-bottomTitle">{{cover.coverTitle}}</div>
+    <div class="panelsLayout-bottomCard">
+      <div class="panelsLayout-bottomImage"><img src="{{cover.coverImage}}"/></div>
+      <div class="panelsLayout-bottomBlurb">{{cover.coverBlurb}}</div>
+    </div>
+  </div>
+
+</template>
+
+
+<!-- 
+  <div class="panelsLayout-dashboardEntry"></div>
+-->

@@ -1,0 +1,49 @@
+@import '../../preamble.lessimport';
+@import './zen_.less';
+
+.zenBarFiller {
+  height: 50px;
+}
+
+.zenBar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 30px;
+  margin: 0px auto;
+  background: @zenWhite;
+  border-top: 1px solid @zenLightGray;
+  color: @zenLightGray;
+  font-size: 0px;
+}
+
+.zenBarInner {
+  /*border-top: 1px solid @zenLightGray;*/
+  width: 900px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0px auto;
+}
+
+.zenLeft {
+  float: left;
+}
+
+.zenRight {
+  float: right;
+}
+
+.zenButton {
+  .animated;
+  font-size: 16px;
+  display: inline-block;
+  cursor: default;
+  padding: 0px 10px;
+  color: @zenLightGray;
+  &:hover {
+    text-decoration: none;
+    background: @zenGray;
+    color: @zenWhite;
+  }
+}
+

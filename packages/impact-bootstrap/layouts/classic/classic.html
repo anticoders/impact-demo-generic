@@ -1,0 +1,42 @@
+<template name="classic">
+  <div class="bodyfill classic-body">
+    <div class="classic-content">
+
+      <div class="classic-header block-from-xs">
+        <h1>S p o t k a n i a &nbsp; M a ł ż e ń s k i e</h1>
+        <h2>d i e c e z j i &nbsp; B i e l s k o – Ż y w i e c k i e j</h2>
+      </div>
+
+      <div class="classic-header block-to-xxs">
+        <h2>Spotkania Małżeńskie diecezji Bielsko–Żywieckiej</h2>
+      </div>
+
+      <div class="classic-menu">
+        <div class="classic-menu-image"><div class="classic-menu-image-inner"></div></div>
+        <div class="classic-menu-menu">
+          <span class="inline-from-sm">&middot;</span>
+          {{#each theme.menu}}
+            <a href="{{this.url}}"><span class="inline-to-xs">&middot; &nbsp; </span>{{this.title}}</a>
+            <span class="inline-from-sm">&middot;</span>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="classic-aftermenu"></div>
+
+      <div class="classic-box">
+        <!-- <div class="classic-box-image"><div class="classic-box-image-inner"></div></div> -->
+        {{yield}}
+      </div>
+
+
+    </div>
+  </div>
+
+  {{#admin}}
+    <a href="/admin/home" class="classic-dashboard-link">Dashboard</a>
+  {{/admin}}
+
+</template>
+
+

@@ -1,0 +1,21 @@
+
+
+.animated {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+
+
+@contentBg:         #ffffff;
+@contentHoverBg:    #f0f0f0;
+@contentColor:      #303030;
+@contentNote:       #c0c0c0;
+
+@thinBorderColor:    #e0e0e0;
+
+
+
+

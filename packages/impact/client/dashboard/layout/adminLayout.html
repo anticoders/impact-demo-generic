@@ -1,0 +1,44 @@
+
+<template name="adminLayout">
+
+  {{#admin}}
+
+    <div class="adminLayout-lamp">
+      <div class="adminLayout-bulbs">
+        {{#each parsedBulbs}}
+          {{#each this}}
+            <div class="adminLayout-bulb {{#if active}}adminLayout-bulbActive{{/if}}">
+              <a href="{{url}}">
+                <span class="adminLayout-bulbIcon"><i class="fa fa-{{icon}}"></i></span>
+                <span class="adminLayout-bulbTitle">{{title}}</span>
+              </a>
+            </div>
+          {{/each}}
+          <div class="adminLayout-bulbSpace"></div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="adminLayout-wrap">
+      <div class="adminLayout-box">
+        <div class="adminLayout-boxTopMenu">
+          <a href="/"><i class="fa fa-home"></i></a>
+          <a href="/users"><i class="fa fa-users"></i></a>
+          <a href="/content"><i class="fa fa-pencil"></i></a>
+          <a href="/profile"><i class="fa fa-user"></i></a>
+          <a href="javascript: Meteor.logout();">Sign out</a>
+        </div>
+        <div class="adminLayout-boxContent">
+          {{yield}}
+        </div>
+      </div>
+    </div>
+
+  {{else}}
+    NOT AN ADMIN?
+    {{loginButtons}}
+  {{/admin}}
+  
+</template>
+
+

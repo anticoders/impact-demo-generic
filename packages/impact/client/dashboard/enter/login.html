@@ -1,0 +1,14 @@
+<template name="enter_login">
+  {{#if currentUser}}
+    You are logged in.<br/>
+    <button class="btn" id="enter_logout">Logout</button>
+  {{else}}
+    email<br/><input type="text" id="enter_email"><br/>
+    password<br/><input type="password" id="enter_password"><br/>
+    <button class="btn" id="enter_login">Sign in</button><br/>
+    <button class="btn" id="enter_create">Sign up</button><br/>
+    <button class="btn" id="enter_forgot">Forgot password</button>
+  {{/if}}
+</template>
+
+

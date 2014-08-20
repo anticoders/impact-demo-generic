@@ -1,0 +1,47 @@
+
+.faBody {
+  background: #f0f0f0;
+}
+
+.faBox {
+  margin: 20px auto;
+  width: 800px;
+  text-align: center;
+}
+
+.faGroupName {
+  display: block;
+  padding: 20px 0px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.faItem {
+  display: inline-block;
+  background: #fff;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+  margin: 3px;
+  width: 120px;
+  height: 140px;
+  text-align: center;
+}
+
+.faItem i {
+  display: block;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+
+  font-size: 100px;
+}
+
+.faItem b {
+  display: block;
+  width: 120px;
+  height: 20px;
+  line-height: 20px;
+
+  font-size: 10px; 
+  font-weight: normal;
+  text-transform: uppercase;
+}

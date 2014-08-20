@@ -1,0 +1,22 @@
+
+.content-list-item {
+  display: block;
+  padding: 10px 20px;
+  margin: 0px -20px;
+}
+
+
+.content-list-item h3 {
+  margin: 0px !important;
+}
+
+a.content-list-item {
+  color: #333333;
+}
+
+a.content-list-item:hover {
+  color: #333333;
+  text-decoration: none;
+  background: #e8e8e8;
+}
+

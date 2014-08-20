@@ -2,6 +2,9 @@
   "packages": {
     "iron-router": "0.8.2",
     "fake": {},
-    "moment": {}
+    "moment": {},
+    "unimark": {},
+    "timestamp": {},
+    "crater-modals": {}
   }
 }
