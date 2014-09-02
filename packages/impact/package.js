@@ -8,19 +8,20 @@ Package.on_use(function (api, where) {
   var server = 'server';
   var both = [client, server];
 
+  api.versionsFrom('0.9.0');
 
   api.use([
     'accounts-base',
     'deps',
-    'fake',
+    'anti:fake@0.4.1',
     'handlebars',
-    'iron-router',
+    'iron:router@0.9.0',
     'less',
     'moment',
     'templating',
     'timestamp',
     'underscore',
-    'unimark',
+    'anti:mark@0.6.0',
   ], both);
 
 

@@ -1,18 +1,14 @@
 
+
 standard-app-packages
 
 less
 accounts-password
 accounts-ui
-iron-router
-fake
-moment
-unimark
-timestamp
 
 
-impact
-impact-bootstrap
-impact-module-blog
-impact-widget-cover
-crater-modals
+iron:router
+mrt:moment@2.8.1
+mrt:timestamp@0.1.1
+
+
