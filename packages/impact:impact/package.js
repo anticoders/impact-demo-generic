@@ -1,34 +1,47 @@
 Package.describe({
-  summary: "Impact (alpha)"
+  summary:  'Impact (alpha)',
+  version:  '0.1.0',
+  name:     'impact:impact',
 });
 
 Package.on_use(function (api, where) {
 
-  var client = 'client';
-  var server = 'server';
-  var both = [client, server];
-
   api.versionsFrom('0.9.0');
 
   api.use([
-    'accounts-base',
-    'deps',
-    'anti:fake@0.4.1',
-    'handlebars',
-    'iron:router@0.9.0',
+    'standard-app-packages',
     'less',
-    'moment',
-    'templating',
-    'timestamp',
-    'underscore',
-    'anti:mark@0.6.0',
-  ], both);
+    'accounts-base',
+    'accounts-password',
+    'accounts-ui',
 
+    'iron:router@0.9.0',
+
+    'mrt:moment@2.8.1',
+    'mrt:timestamp@0.1.1',
+    'anti:fake@0.4.1',
+    'anti:mark@0.6.0',
+  ], ['client', 'server']);
+
+  api.imply([
+    'standard-app-packages',
+    'less',
+    'accounts-base',
+    'accounts-password',
+    'accounts-ui',
+
+    'iron:router@0.9.0',
+
+    'mrt:moment@2.8.1',
+    'mrt:timestamp@0.1.1',
+    'anti:fake@0.4.1',
+    'anti:mark@0.6.0',
+  ]);
 
   api.add_files([
     'both/index.js',
     'both/model.js',
-  ], both);
+  ], ['client', 'server']);
 
   api.add_files([
 
@@ -74,7 +87,7 @@ Package.on_use(function (api, where) {
 
     'client/index/index.html',
     'client/index/subscribe.js',
-  ], client);
+  ], 'client');
 
   api.add_files([
     'server/greet.js',
@@ -86,7 +99,7 @@ Package.on_use(function (api, where) {
 
     'server/widgets/publish.js',
     
-  ], server);
+  ], 'server');
 
   api.export(['App', 'Modules', 'Widgets', 'Media', 'Panels']);
 });

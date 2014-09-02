@@ -1,34 +1,20 @@
 Package.describe({
-  summary: "Impact (alpha)"
+  summary:  'Impact (alpha)',
+  name:     'impact:module-blog',
+  version:  '0.1.0',
 });
 
 Package.on_use(function (api, where) {
   
-  var client = 'client';
-  var server = 'server';
-  var both = [client, server];
-
-  api.use([
-    'accounts-base',
-    'deps',
-    'fake',
-    'handlebars',
-    'iron-router',
-    'less',
-    'moment',
-    'templating',
-    'timestamp',
-    'underscore',
-    'unimark',
-  ], both);
-
-  api.use('impact', both);
+  
+  api.use(['impact:impact'], ['client', 'server']);
+  api.imply(['impact:impact'], ['client', 'server']);
 
 
   api.add_files([
     'both/index.js',
     'both/model.js',
-  ], both);
+  ], ['client', 'server']);
 
   api.add_files([
     'client/dashboard/dashboard.html',
@@ -44,12 +30,12 @@ Package.on_use(function (api, where) {
 
     'client/config.js',
     'client/subscribe.js',
-  ], client);
+  ], 'client');
 
   api.add_files([
     'server/allow.js',
     'server/fake.js',
     'server/publish.js',
-  ], server);
+  ], 'server');
 
 });

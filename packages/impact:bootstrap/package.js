@@ -1,27 +1,13 @@
 Package.describe({
-  summary: "Impact (alpha)"
+  summary:  'Impact (alpha)',
+  name:     'impact:bootstrap',
+  version:  '0.1.0',
 });
 
 Package.on_use(function (api, where) {
   
-  var client = 'client';
-
-  api.use([
-    'accounts-base',
-    'deps',
-    'fake',
-    'handlebars',
-    'iron-router',
-    'moment',
-    'templating',
-    'timestamp',
-    'underscore',
-    'unimark',
-  ], client);
-
-  api.use('less', ['client', 'server']);
-
-  api.use('impact', client);
+  api.use(['impact:impact'], ['client', 'server']);
+  api.imply(['impact:impact'], ['client', 'server']);
 
   api.add_files([
     'bootstrap/css/bootstrap.css',
@@ -51,8 +37,6 @@ Package.on_use(function (api, where) {
     
     'vendor/autogrow.js',
     
-
-    
-  ], client);
+  ], 'client');
 
 });
