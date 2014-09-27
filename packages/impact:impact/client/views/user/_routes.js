@@ -16,7 +16,7 @@ Router.map(function () {
     template: 'user_home',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.User.bulbs,
+      bulbs: 'User',
       bulb: 'home',
     }},
   });
@@ -33,7 +33,7 @@ Router.map(function () {
     template: 'user_profile',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.User.bulbs,
+      bulbs: 'User',
       bulb: 'profile',
     }},
   });
@@ -49,7 +49,7 @@ Router.map(function () {
     template: 'user_account',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.User.bulbs,
+      bulbs: 'User',
       bulb: 'account',
     }},
   });

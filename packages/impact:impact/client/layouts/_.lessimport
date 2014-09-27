@@ -9,12 +9,12 @@
 
 
 
-@contentBg:         #ffffff;
-@contentHoverBg:    #f0f0f0;
-@contentColor:      #303030;
-@contentNote:       #c0c0c0;
+@contentBg:           #ffffff;
+@contentHoverBg:      #f0f0f0;
+@contentColor:        #303030;
+@contentNote:         #c0c0c0;
 
-@thinBorderColor:    #e0e0e0;
+@thinBorderColor:     #e0e0e0;
 
 
 

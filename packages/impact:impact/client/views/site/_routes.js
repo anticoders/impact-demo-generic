@@ -14,7 +14,7 @@ Router.map(function () {
     template: 'site_home',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.Site.bulbs,
+      bulbs: 'Site',
       bulb: 'home',
     }},
   });
@@ -30,7 +30,7 @@ Router.map(function () {
     template: 'users_settings',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.Site.bulbs,
+      bulbs: 'Site',
       bulb: 'settings',
     }},
   });
@@ -46,7 +46,7 @@ Router.map(function () {
     template: 'users_list',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.Site.bulbs,
+      bulbs: 'Site',
       bulb: 'list',
     }},
   });
@@ -62,7 +62,7 @@ Router.map(function () {
     template: 'site_invite',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.Site.bulbs,
+      bulbs: 'Site',
       bulb: 'invite',
     }},
   });

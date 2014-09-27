@@ -13,7 +13,7 @@ Router.map(function () {
     template: 'content_home',
     layoutTemplate: 'adminLayout',
     data: { impact: {
-      bulbs: Panels.Content.bulbs,
+      bulbs: 'Content',
       bulb: 'home',
     }},
   });

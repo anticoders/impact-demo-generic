@@ -46,8 +46,10 @@ Package.on_use(function (api, where) {
   api.add_files([
 
     'client/helpers/dateHelpers.js',
+    'client/helpers/logic.js',
 
     'client/layouts/_.lessimport',
+    'client/layouts/index.less',
     'client/layouts/admin/adminLayout.html',
     'client/layouts/admin/adminLayout.js',
     'client/layouts/admin/adminHeader.less',

@@ -1,7 +1,7 @@
 
 @import '../_.lessimport';
 
-@panelWidth:    100px;
+@panelWidth:    160px;
 @contentWidth:  900px;
 
 
@@ -17,9 +17,53 @@
   height: 100%;  
   text-align: center;
 
-  background: #f4f4f4;
-  border-right: 1px solid @thinBorderColor;
+  background: #303840;
+  border-right: 1px solid #101418;
 }
+
+.adminLayout-logo {
+  font-family: Lobster;
+  font-size: 16px;
+  color: #f8fcff;
+
+  padding: 5px 0px 20px;
+}
+
+.adminLayout-tabs {
+  border-bottom: 1px solid #787c80;
+  height: 40px;
+  font-size: 0px;
+}
+
+.adminLayout-tab {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+
+  text-align: center;
+  color: #787c80;
+
+  cursor: pointer;
+
+  &:hover {
+    color: #ff8800;
+  };
+  
+}
+
+.adminLayout-tabActive {
+  color: #f8fcff; 
+  border: 1px solid #787c80;
+  border-bottom-color: #303840;
+}
+
+
 
 .adminLayout-wrap {
   /*position: relative;*/
