@@ -1,42 +1,42 @@
 App = {};
+
 Modules = {};
 Widgets = {};
 Media = {};
+
+
 Panels = {
   Content: {
+    homeBulbs: [],
     moduleBulbs: [],
     widgetBulbs: [],
     mediaBulbs: [],
   },
-  Users: {
+  Site: {
+    homeBulbs: [],
     theBulbs: [],
   },
-  Profile: {
+  User: {
+    homeBulbs: [],
     theBulbs: [],
   },
 };
 
 
 Panels.Content.bulbs = [
-  [
-    {title: 'Content', name: 'home', url: '/content', icon: 'home'},
-  ],
+  Panels.Content.homeBulbs,
   Panels.Content.moduleBulbs,
   Panels.Content.widgetBulbs,
   Panels.Content.mediaBulbs,
 ];
 
-Panels.Users.bulbs = [
-  [
-    {title: 'Users', name: 'home', url: '/users', icon: 'home'},
-  ],
-  Panels.Users.theBulbs,
+Panels.Site.bulbs = [
+  Panels.Site.homeBulbs,
+  Panels.Site.theBulbs,
 ];
 
-Panels.Profile.bulbs = [
-  [
-    {title: 'Profile', name: 'home', url: '/profile', icon: 'home'},
-  ],
-  Panels.Profile.theBulbs,
+Panels.User.bulbs = [
+  Panels.User.homeBulbs,
+  Panels.User.theBulbs,
 ];
 

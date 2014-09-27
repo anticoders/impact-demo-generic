@@ -1,7 +1,7 @@
 
 <template name="adminLayout">
 
-  {{#admin}}
+  {{#if currentUser}}
 
     <div class="adminLayout-lamp">
       <div class="adminLayout-bulbs">
@@ -29,7 +29,7 @@
           <a href="javascript: Meteor.logout();">Sign out</a>
         </div>
         <div class="adminLayout-boxContent">
-          {{yield}}
+          {{> yield}}
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
   {{else}}
     NOT AN ADMIN?
     {{loginButtons}}
-  {{/admin}}
+  {{/if}}
   
 </template>
 

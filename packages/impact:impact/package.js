@@ -46,8 +46,6 @@ Package.on_use(function (api, where) {
   api.add_files([
 
     'client/helpers/dateHelpers.js',
-    'client/helpers/user.html',
-    'client/helpers/admin.html',
 
     'client/layouts/_.lessimport',
     'client/layouts/admin/adminLayout.html',
@@ -84,14 +82,15 @@ Package.on_use(function (api, where) {
     'client/views/enter/login.js',
     'client/views/enter/_routes.js',
     
-    'client/views/profile/home.html',
-    'client/views/profile/password.html',
-    'client/views/profile/_routes.js',
+    'client/views/user/home.html',
+    'client/views/user/profile.html',
+    'client/views/user/account.html',
+    'client/views/user/_routes.js',
 
-    'client/views/users/invite.html',
-    'client/views/users/list.html',
-    'client/views/users/settings.html',
-    'client/views/users/_routes.js',
+    'client/views/site/invite.html',
+    'client/views/site/users.html',
+    'client/views/site/settings.html',
+    'client/views/site/_routes.js',
 
     'client/index/index.html',
     'client/index/subscribe.js',

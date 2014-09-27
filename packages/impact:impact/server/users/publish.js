@@ -4,7 +4,7 @@
 
 
 Meteor.publish("userData", function() {
-  return Meteor.users.find(this.userId, {fields: {'admin': 1}});
+  return Meteor.users.find(this.userId, {fields: {'roles': 1}});
 });
 
 
