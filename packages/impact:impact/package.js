@@ -20,7 +20,7 @@ Package.on_use(function (api, where) {
     'mrt:moment@2.8.1',
     'mrt:timestamp@0.1.1',
     'anti:fake@0.4.1',
-    'anti:mark@0.6.0',
+    // 'anti:mark@0.6.0',
   ], ['client', 'server']);
 
   api.imply([
@@ -35,7 +35,7 @@ Package.on_use(function (api, where) {
     'mrt:moment@2.8.1',
     'mrt:timestamp@0.1.1',
     'anti:fake@0.4.1',
-    'anti:mark@0.6.0',
+    // 'anti:mark@0.6.0',
   ]);
 
   api.add_files([
@@ -98,8 +98,12 @@ Package.on_use(function (api, where) {
     'server/users/fakeData.js',
 
     'server/widgets/publish.js',
-    
   ], 'server');
+
+
+  api.add_files([
+    'public/files/impact128.png',
+  ], ['client', 'server']);
 
   api.export(['App', 'Modules', 'Widgets', 'Media', 'Panels']);
 });

@@ -6,7 +6,13 @@ Modules.Blog.load({
   name: 'blog',
   path: '/blog',
   articlePath: '/a',
-  home: true,
+  home: false,
+});
+
+Modules.Example.load({
+  name: 'example',
+  path: '/',
+  layoutTemplate: 'panelsLayout',
 });
 
 
