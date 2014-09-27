@@ -11,20 +11,9 @@ Template.adminLayout.destroyed = function() {
 Template.adminLayout.helpers({
 
   parsedBulbs: function(x) {
-
-    var b = this.impact.bulb;
-    var panels = Panels[this.impact.bulbs].bulbs;
-
-    _.each(panels, function(bulbs) {
-      _.each(bulbs, function(bulb) {
-        bulb.active = bulb.name && (bulb.name === b);
-      });
-    });
-
-
-    console.log("BU?", panels);
-    return panels;
+    return Panels[this.impact.bulbs].bulbs;
   },
+  
 });
 
 

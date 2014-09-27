@@ -18,12 +18,10 @@
         {{#each parsedBulbs}}
           <div class="adminLayout-bulbGroup">
             {{#each this}}
-              <div class="adminLayout-bulb {{#if active}}adminLayout-bulbActive{{/if}}">
-                <a href="{{url}}">
-                  <span class="adminLayout-bulbIcon"><i class="fa fa-{{icon}}"></i></span>
-                  <span class="adminLayout-bulbTitle">{{title}}</span>
-                </a>
-              </div>
+              <a href="{{url}}" class="adminLayout-bulb {{activeIf ../../impact.bulb name 'adminLayout-bulbActive'}}">
+                <span class="adminLayout-bulbIcon"><i class="fa fa-{{icon}}"></i></span>
+                <span class="adminLayout-bulbTitle">{{title}}</span>
+              </a>
             {{/each}}
           </div>
         {{/each}}
