@@ -11,8 +11,9 @@ Modules.Blog.load({
 
 Modules.Example.load({
   name: 'example',
-  path: '/',
+  path: '/example',
   layoutTemplate: 'panelsLayout',
+  home: true,
 });
 
 

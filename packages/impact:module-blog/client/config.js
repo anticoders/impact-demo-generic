@@ -28,6 +28,15 @@ Modules.Blog.load = function(params) {
     name: 'm:blog',
     url: '/content' + params.path,
     icon: 'th-list',
+    subbulbs: [{
+      title: 'List articles',
+      name: 'list',
+      url: '/content' + params.path,
+    }, {
+      title: 'New article',
+      name: 'new',
+      url: '/content' + params.path + '/new',
+    }],
   });
 
   Router.map(function () {
@@ -39,6 +48,8 @@ Modules.Blog.load = function(params) {
       Todo: layout names should be taken from config;
     */
 
+    // HOME ROUTE //============================================================
+
     if(params.home) {
       this.route('home', {
         path: '/',
@@ -47,46 +58,12 @@ Modules.Blog.load = function(params) {
       });
     }
 
+    // USER ROUTES //============================================================
+
     this.route(params.name + '_list', {
       path: params.path,
       template: 'blog_list',
       layoutTemplate: 'panelsLayout',
-    });
-
-    this.route(params.name + '_dashboard', {
-      path: '/content' + params.path,
-      template: 'blog_dashboard',
-      layoutTemplate: 'adminLayout',
-      data: {impact: {
-        bulbs: Panels.Content.bulbs,
-        bulb: 'm:blog',
-      }},
-    });
-
-    this.route(params.name + '_new', {
-      path: params.path + '/edit',
-      action: function() {
-        var _id = Modules.Blog.Articles.insert({});
-        _.defer(function() {
-          Router.go('blog_edit', {_id: _id});
-        });
-      },
-      // template: 'blog_edit',
-      // layoutTemplate: 'zen',
-      // data: function() { return {
-      //   create: true,
-      // };},
-    });
-
-    this.route(params.name + '_edit', {
-      path: params.path + '/edit/:_id',
-      template: 'blog_edit',
-      layoutTemplate: 'zenLayout',
-      data: function() {
-        return {
-          article: Modules.Blog.Articles.findOne({_id: this.params._id}),
-        };
-      },
     });
 
     this.route(params.name + '_article', {
@@ -100,6 +77,77 @@ Modules.Blog.load = function(params) {
         article: Modules.Blog.Articles.findOne(this.params._id),
       };},
     });
+
+
+    // ADMIN ROUTES //============================================================
+
+    this.route(params.name + '_dashboard', {
+      path: '/content' + params.path,
+      template: 'blog_dashboard',
+      layoutTemplate: 'adminLayout',
+      data: {impact: {
+        bulbs: 'Content',
+        bulb: 'm:blog',
+        subbulb: 'list',
+      }},
+    });
+
+    this.route(params.name + '_new', {
+      path: '/content' + params.path + '/new',
+      template: 'blog_new',
+      layoutTemplate: 'adminLayout',
+      data: {impact: {
+        bulbs: 'Content',
+        bulb: 'm:blog',
+        subbulb: 'new',
+      }},
+    });
+
+    this.route(params.name + '_edit', {
+      path: '/content' + params.path + '/edit/:_id',
+      template: 'blog_new',
+      layoutTemplate: 'adminLayout',
+      data: function() {
+        return {
+          impact: {
+            bulbs: 'Content',
+            bulb: 'm:blog',
+            subbulb: 'new',
+          },
+          article: Modules.Blog.Articles.findOne({_id: this.params._id}),
+        };
+      },
+    });
+
+
+
+    // this.route(params.name + '_new', {
+    //   path: params.path + '/edit',
+    //   action: function() {
+    //     var _id = Modules.Blog.Articles.insert({});
+    //     _.defer(function() {
+    //       Router.go('blog_edit', {_id: _id});
+    //     });
+    //   },
+    //   // template: 'blog_edit',
+    //   // layoutTemplate: 'zen',
+    //   // data: function() { return {
+    //   //   create: true,
+    //   // };},
+    // });
+
+    // this.route(params.name + '_edit', {
+    //   path: params.path + '/edit/:_id',
+    //   template: 'blog_edit',
+    //   layoutTemplate: 'zenLayout',
+    //   data: function() {
+    //     return {
+    //       article: Modules.Blog.Articles.findOne({_id: this.params._id}),
+    //     };
+    //   },
+    // });
+
+
 
 
   });

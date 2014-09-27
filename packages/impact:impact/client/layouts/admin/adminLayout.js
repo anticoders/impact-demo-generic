@@ -11,6 +11,10 @@ Template.adminLayout.destroyed = function() {
 Template.adminLayout.helpers({
 
   parsedBulbs: function(x) {
+    if(! Panels[this.impact.bulbs]) {
+      console.error('No such bulbs!', this.impact);
+      return;
+    }
     return Panels[this.impact.bulbs].bulbs;
   },
   

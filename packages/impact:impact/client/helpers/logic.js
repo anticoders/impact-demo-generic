@@ -6,3 +6,9 @@ UI.registerHelper('activeIf', function(a, b, active) {
   return '';
 });
 
+UI.registerHelper('equals', function(a, b) {
+  return a == b;
+});
+
+
+

@@ -15,6 +15,9 @@ Package.on_use(function (api, where) {
 
   api.addFiles([
     'client/views/example.html',
+    'client/dashboard/dashboard.html',
+    'client/dashboard/fruits.html',
+    'client/dashboard/stones.html',
     'client/config.js',
   ], 'client');
 

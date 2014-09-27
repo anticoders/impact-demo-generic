@@ -20,13 +20,14 @@
   <div class="panelsLayout-box">
     <div class="panelsLayout-boxTopBar"></div>
     <div class="panelsLayout-boxTopMenu">
-      {{#user}}
+     {{#if currentUser}}
         {{> yield 'top'}}
-        <a href="/users"><i class="fa fa-users"></i></a>
-        <a href="/content"><i class="fa fa-pencil"></i></a>
-        <a href="/profile"><i class="fa fa-user"></i></a>
-        <a href="javascript: Meteor.logout();">Sign out</a>
-      {{/user}}
+        <a href="{{pathFor 'user_home'}}">{{currentUser.username}}</a>
+        <a href="{{pathFor 'impact_home'}}"><i class="fa fa-dashboard"></i></a>
+        <a href="#" onclick="javascript: Meteor.logout();"><i class="fa fa-sign-out"></i></a>
+      {{else}}
+        <a href="{{pathFor 'enter_login'}}">Sign in</a>
+      {{/if}}
     </div>
     <div class="panelsLayout-boxContent">
       {{> yield}}
@@ -44,7 +45,3 @@
 
 </template>
 
-
-<!-- 
-  <div class="panelsLayout-dashboardEntry"></div>
--->

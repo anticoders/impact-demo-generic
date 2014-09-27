@@ -1,8 +1,8 @@
 
 <template name="zenLayout">
-  {{#admin}}
-    {{yield}}
-  {{/admin}}
+  {{#if currentUser}}
+    {{> yield}}
+  {{/if}}
 </template>
 
 

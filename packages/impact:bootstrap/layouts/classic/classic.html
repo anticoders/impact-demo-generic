@@ -26,16 +26,16 @@
 
       <div class="classic-box">
         <!-- <div class="classic-box-image"><div class="classic-box-image-inner"></div></div> -->
-        {{yield}}
+        {{> yield}}
       </div>
 
 
     </div>
   </div>
 
-  {{#admin}}
+  {{#if currentUser}}
     <a href="/admin/home" class="classic-dashboard-link">Dashboard</a>
-  {{/admin}}
+  {{/if}}
 
 </template>
 

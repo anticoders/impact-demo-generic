@@ -13,7 +13,6 @@ Package.on_use(function (api, where) {
     'less',
     'accounts-base',
     'accounts-password',
-    'accounts-ui',
 
     'iron:router@0.9.0',
 
@@ -28,7 +27,6 @@ Package.on_use(function (api, where) {
     'less',
     'accounts-base',
     'accounts-password',
-    'accounts-ui',
 
     'iron:router@0.9.0',
 

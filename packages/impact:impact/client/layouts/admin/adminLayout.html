@@ -4,9 +4,11 @@
   {{#if currentUser}}
 
     <div class="adminLayout-lamp">
-      <div class="adminLayout-logo">
-        Impact
-      </div>
+      <a href="{{pathFor 'home'}}" class="adminLayout-logo">
+        <i class="_light fa fa-arrow-left"></i>
+        <span class="_logo">Impact</span>
+        <i class="_dark fa fa-arrow-left"></i>
+      </a>
 
       <div class="adminLayout-tabs">
         <a href="{{pathFor 'user_home'}}" class="adminLayout-tab {{activeIf impact.bulbs 'User' 'adminLayout-tabActive'}}"><i class="fa fa-user"></i></a>
@@ -22,6 +24,11 @@
                 <span class="adminLayout-bulbIcon"><i class="fa fa-{{icon}}"></i></span>
                 <span class="adminLayout-bulbTitle">{{title}}</span>
               </a>
+              {{#if equals ../../impact.bulb name}}
+                {{#each subbulbs}}
+                  <a href="{{url}}" class="adminLayout-subbulb {{activeIf ../../../impact.subbulb name 'adminLayout-subbulbActive'}}">{{title}}</a>
+                {{/each}}
+              {{/if}}
             {{/each}}
           </div>
         {{/each}}
@@ -31,11 +38,8 @@
     <div class="adminLayout-wrap">
       <div class="adminLayout-box">
         <div class="adminLayout-boxTopMenu">
-          <a href="/"><i class="fa fa-home"></i></a>
-          <a href="/users"><i class="fa fa-users"></i></a>
-          <a href="/content"><i class="fa fa-pencil"></i></a>
-          <a href="/profile"><i class="fa fa-user"></i></a>
-          <a href="javascript: Meteor.logout();">Sign out</a>
+          <a href="{{pathFor 'user_home'}}">{{currentUser.username}}</a>
+          <a href="#" onclick="javascript: Meteor.logout();"><i class="fa fa-sign-out"></i></a>
         </div>
         <div class="adminLayout-boxContent">
           {{> yield}}
