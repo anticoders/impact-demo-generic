@@ -4,7 +4,7 @@ Router.map(function () {
   // Home //============================================================
 
   Panels.Content.homeBulbs.push({
-    title: 'Dashboard', name: 'home', url: '/user', icon: 'home'
+    title: 'Site Content', name: 'home', url: '/user', icon: 'home'
   });
 
 

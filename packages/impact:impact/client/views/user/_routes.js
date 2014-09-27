@@ -7,7 +7,7 @@ Router.map(function () {
   // Home //============================================================
 
   Panels.User.homeBulbs.push({
-    title: 'User Home', name: 'home', url: '/user', icon: 'home'
+    title: 'User Profile', name: 'home', url: '/user', icon: 'user'
   });
 
 
@@ -25,7 +25,7 @@ Router.map(function () {
   // Profile //============================================================
 
   Panels.User.theBulbs.push({
-    title: 'Profile', name: 'profile', url: '/user/profile', icon: 'user'
+    title: 'Appearance', name: 'profile', url: '/user/profile', icon: 'user'
   });
 
   this.route('user_profile', {

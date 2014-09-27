@@ -5,7 +5,7 @@ Router.map(function () {
   // Home //============================================================
 
   Panels.Site.homeBulbs.push({
-    title: 'Home', name: 'home', url: '/site', icon: 'home'
+    title: 'Site Settings', name: 'home', url: '/site', icon: 'cog'
   });
 
 
@@ -19,21 +19,6 @@ Router.map(function () {
     }},
   });
 
-  // User Settings //============================================================
-
-  Panels.Site.theBulbs.push({
-    title: 'Settings', name: 'settings', url: '/users/settings', icon: 'gear'
-  });
-
-  this.route('site_usersSettings', {
-    path: '/site/settings',
-    template: 'users_settings',
-    layoutTemplate: 'adminLayout',
-    data: { impact: {
-      bulbs: 'Site',
-      bulb: 'settings',
-    }},
-  });
 
   // User List //============================================================
 
@@ -41,13 +26,13 @@ Router.map(function () {
     title: 'Users', name: 'users', url: '/site/users', icon: 'users'
   });
 
-  this.route('users_list', {
-    path: '/users/list',
-    template: 'users_list',
+  this.route('site_users', {
+    path: '/site/users',
+    template: 'site_users',
     layoutTemplate: 'adminLayout',
     data: { impact: {
       bulbs: 'Site',
-      bulb: 'list',
+      bulb: 'users',
     }},
   });
 

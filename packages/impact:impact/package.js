@@ -89,9 +89,9 @@ Package.on_use(function (api, where) {
     'client/views/user/account.html',
     'client/views/user/_routes.js',
 
-    'client/views/site/invite.html',
+    'client/views/site/home.html',
     'client/views/site/users.html',
-    'client/views/site/settings.html',
+    'client/views/site/invite.html',
     'client/views/site/_routes.js',
 
     'client/index/index.html',
