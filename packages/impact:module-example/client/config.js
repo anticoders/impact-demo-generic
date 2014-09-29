@@ -11,7 +11,7 @@ Modules.Example.load = function(params) {
     title: 'Example',
     name: 'm:example',
     url: '/content' + params.path,
-    icon: 'th-list',
+    icon: 'flask',
     subbulbs: [{
       title: 'Fruits',
       name: 'fruits',

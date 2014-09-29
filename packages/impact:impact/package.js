@@ -4,7 +4,7 @@ Package.describe({
   name:     'impact:impact',
 });
 
-Package.on_use(function (api, where) {
+Package.onUse(function (api, where) {
 
   api.versionsFrom('0.9.0');
 
@@ -36,12 +36,12 @@ Package.on_use(function (api, where) {
     // 'anti:mark@0.6.0',
   ]);
 
-  api.add_files([
+  api.addFiles([
     'both/index.js',
     'both/model.js',
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
 
     'client/helpers/dateHelpers.js',
     'client/helpers/logic.js',
@@ -96,7 +96,7 @@ Package.on_use(function (api, where) {
     'client/index/subscribe.js',
   ], 'client');
 
-  api.add_files([
+  api.addFiles([
     'server/greet.js',
 
     'server/users/setup.js',
@@ -108,9 +108,9 @@ Package.on_use(function (api, where) {
   ], 'server');
 
 
-  api.add_files([
-    'public/files/impact128.png',
-  ], ['client', 'server']);
+  api.addFiles([
+    'files/impact128.png',
+  ], ['client', 'server'], {isAsset: true});
 
   api.export(['App', 'Modules', 'Widgets', 'Media', 'Panels']);
 });

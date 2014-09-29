@@ -1,13 +1,15 @@
 <template name="enterLayout">
+  <div class="enterLayout-bodyOverlay">
 
-  <div class="enterLayout-header">
-    Impact
+    <div class="enterLayout-header">
+      Impact
+    </div>
+
+    <div class="enterLayout-box">
+      {{> yield}}
+    </div>
+
   </div>
-
-  <div class="enterLayout-box">
-    {{> yield}}
-  </div>
-
 </template>
 
 
