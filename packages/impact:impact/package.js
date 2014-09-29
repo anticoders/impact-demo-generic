@@ -59,9 +59,9 @@ Package.onUse(function (api, where) {
     'client/layouts/enter/enterLayout.js',
     'client/layouts/enter/enterLayout.less',
 
-    'client/layouts/intro/introLayout.html',
-    'client/layouts/intro/introLayout.js',
-    'client/layouts/intro/introLayout.less',
+    'client/layouts/user/userLayout.html',
+    'client/layouts/user/userLayout.js',
+    'client/layouts/user/userLayout.less',
 
 
     'client/views/impact/home.html',
