@@ -1,11 +1,28 @@
 <template name="newsletter_newsletter_list">
 
-  {{#each newsletters}}
-      <div>
-        <small class="text-muted">{{date updatedAt}}</small>
-        <p>{{name}}</p>
-        <p>Subscribers: {{subscriberCount _id}}</p>
-      </div>
-  {{/each}}
+  <table class="table table-hover table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Subscribers</th>
+        <th>Created</th>
+        <th>Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each newsletters}}
+        <tr>
+          <td>{{index}}</td>
+          <td>{{name}}</td>
+          <td>{{subscriberCount _id}}</td>
+          <td>{{date createdAt}}</td>
+          <td>{{date updatedAt}}</td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
 
 </template>

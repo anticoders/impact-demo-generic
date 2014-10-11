@@ -1,11 +1,30 @@
 <template name="newsletter_subscriber_list">
 
-  {{#each subscribers}}
-      <div>
-        <small class="text-muted">{{date updatedAt}}</small>
-        <h3>{{name}}</h3>
-        <h3>{{email}}</h3>
-      </div>
-  {{/each}}
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Newsletters</th>
+        <th>Created</th>
+        <th>Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each subscribers}}
+        <tr>
+          <td>{{index}}</td>
+          <td>{{name}}</td>
+          <td>{{email}}</td>
+          <td>{{length newsletters}}</td>
+          <td>{{date createdAt}}</td>
+          <td>{{date updatedAt}}</td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
 
 </template>
