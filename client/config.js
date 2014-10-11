@@ -16,6 +16,12 @@ Modules.Example.load({
   home: true,
 });
 
+Modules.Newsletter.load({
+  name: 'newsletter',
+  path: '/newsletter',
+  home: false,
+});
+
 
 // Modules.Dyna.load({
 
