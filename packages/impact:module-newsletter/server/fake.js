@@ -13,7 +13,7 @@ console.log("FAKING MODULE: NEWSLETTER");
 
 _.times(5, function() {
   Modules.Newsletter.Newsletters.insert({
-    title: Fake.word(),
+    name: Fake.word(),
 
     createdAt: moment().valueOf(),
     publishedAt: moment().valueOf(),

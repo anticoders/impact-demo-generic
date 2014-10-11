@@ -1,0 +1,11 @@
+<template name="newsletter_subscriber_list">
+
+  {{#each subscribers}}
+      <div>
+        <small class="text-muted">{{date updatedAt}}</small>
+        <h3>{{name}}</h3>
+        <h3>{{email}}</h3>
+      </div>
+  {{/each}}
+
+</template>

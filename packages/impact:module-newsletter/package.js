@@ -20,6 +20,10 @@ Package.on_use(function (api, where) {
   api.addFiles([
     'client/config.js',
     'client/subscribe.js',
+    'client/views/newsletter_list.html',
+    'client/views/newsletter_list.js',
+    'client/views/subscriber_list.html',
+    'client/views/subscriber_list.js',
   ], 'client');
 
   api.addFiles([
