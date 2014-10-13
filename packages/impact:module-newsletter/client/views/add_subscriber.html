@@ -1,0 +1,11 @@
+<template name="insertSubscriberForm">
+  {{#autoForm collection="Books" id="insertSubscriberForm" type="insert"}}
+    <fieldset>
+      <legend>Add a subscriber</legend>
+      {{> afQuickField name='name'}}
+      {{> afQuickField name='email'}}
+      {{> afFieldInput name="newsletters" options=newsletterOptions}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Add</button>
+  {{/autoForm}}
+</template>
