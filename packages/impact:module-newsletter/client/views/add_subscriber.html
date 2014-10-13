@@ -1,11 +1,22 @@
-<template name="insertSubscriberForm">
-  {{#autoForm collection="Books" id="insertSubscriberForm" type="insert"}}
-    <fieldset>
-      <legend>Add a subscriber</legend>
-      {{> afQuickField name='name'}}
-      {{> afQuickField name='email'}}
-      {{> afFieldInput name="newsletters" options=newsletterOptions}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Add</button>
-  {{/autoForm}}
+<template name="newsletter_add_subscriber">
+  <form class="form-inline">
+    <div class="form-group">
+      <label class="sr-only" for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="inputEmail">Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="inputEmail">Newsletter</label>
+      <select id="inputNewsletter" class="form-control" placeholder="Select newsletter">
+        {{#each newsletters}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <button id="submit" class="btn btn-primary">Add subscribtion</button>
+  </form>
 </template>
+

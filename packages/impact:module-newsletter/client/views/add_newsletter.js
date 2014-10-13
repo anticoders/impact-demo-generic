@@ -17,5 +17,5 @@ Template.newsletter_add_newsletter.events = {
       
     }
     
-  }  
+  }
 };

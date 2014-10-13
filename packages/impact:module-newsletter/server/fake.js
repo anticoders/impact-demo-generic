@@ -16,7 +16,6 @@ _.times(5, function() {
     name: Fake.word(),
 
     createdAt: moment().valueOf(),
-    publishedAt: moment().valueOf(),
     updatedAt: moment().valueOf(),
   });
 });
@@ -37,7 +36,6 @@ _.times(40, function() {
     newsletters: _.sample(newsletter_ids, _.sample(counts_distribution)),
 
     createdAt: moment().valueOf(),
-    publishedAt: false,
     updatedAt: moment().valueOf(),
   });
 });

@@ -29,6 +29,8 @@ Package.on_use(function (api, where) {
     'client/views/subscriber_list.js',
     'client/views/add_newsletter.html',
     'client/views/add_newsletter.js',
+    'client/views/add_subscriber.html',
+    'client/views/add_subscriber.js',
   ], 'client');
 
   api.addFiles([
