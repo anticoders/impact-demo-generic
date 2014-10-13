@@ -3,4 +3,7 @@ impact:bootstrap
 impact:module-blog
 impact:module-example
 impact:widget-cover
+aldeed:simple-schema
+aldeed:collection2
+aldeed:autoform
 impact:module-newsletter

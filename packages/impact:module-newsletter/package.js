@@ -12,6 +12,9 @@ Package.on_use(function (api, where) {
   api.use(['impact:impact'], ['client', 'server']);
   api.imply(['impact:impact'], ['client', 'server']);
   
+  // Q to HOG:
+  // can I add files automatically?
+
   api.addFiles([
     'both/index.js',
     'both/model.js',
@@ -24,6 +27,8 @@ Package.on_use(function (api, where) {
     'client/views/newsletter_list.js',
     'client/views/subscriber_list.html',
     'client/views/subscriber_list.js',
+    'client/views/add_newsletter.html',
+    'client/views/add_newsletter.js',
   ], 'client');
 
   api.addFiles([

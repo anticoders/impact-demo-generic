@@ -14,23 +14,6 @@ Modules.Newsletter.Newsletters.find({}).observeChanges({
 
   changed: function(id, changes) {
     if(_.size(changes) === 1) {
-
-      if(changes.updatedAt || changes.createdAt || changes.publishedAt) return;
-      if(changes.published) {
-        Meteor.setTimeout(function() {
-          var item = Modules.Newsletter.Newsletters.findOne(id);
-          if(!item.publishedAt) {
-            Modules.Newsletter.Newsletters.update(id, {$set: {publishedAt: new Date().getTime()}});
-          }
-        }, 1);
-        return;
-      }
-
-      Meteor.setTimeout(function() {
-        Modules.Newsletter.Newsletters.update(id, {$set: {updatedAt: new Date().getTime()}});
-      }, 1);
-
-    } else {
       Meteor.setTimeout(function() {
         Modules.Newsletter.Newsletters.update(id, {$set: {updatedAt: new Date().getTime()}});
       }, 1);
@@ -50,23 +33,6 @@ Modules.Newsletter.Subscribers.find({}).observeChanges({
 
   changed: function(id, changes) {
     if(_.size(changes) === 1) {
-
-      if(changes.updatedAt || changes.createdAt || changes.publishedAt) return;
-      if(changes.published) {
-        Meteor.setTimeout(function() {
-          var item = Modules.Newsletter.Subscribers.findOne(id);
-          if(!item.publishedAt) {
-            Modules.Newsletter.Subscribers.update(id, {$set: {publishedAt: new Date().getTime()}});
-          }
-        }, 1);
-        return;
-      }
-
-      Meteor.setTimeout(function() {
-        Modules.Newsletter.Subscribers.update(id, {$set: {updatedAt: new Date().getTime()}});
-      }, 1);
-
-    } else {
       Meteor.setTimeout(function() {
         Modules.Newsletter.Subscribers.update(id, {$set: {updatedAt: new Date().getTime()}});
       }, 1);
