@@ -10,6 +10,7 @@
         <th>Subscribers</th>
         <th>Created</th>
         <th>Updated</th>
+        <th>Options</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
           <td>{{subscriberCount _id}}</td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
+          <td><a class="remove" href="{{_id}}">remove (TODO)</a></td>
         </tr>
       {{/each}}
 
