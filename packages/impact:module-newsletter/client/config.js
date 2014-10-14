@@ -20,6 +20,10 @@ Modules.Newsletter.load = function(params) {
       title: 'List subscribers',
       name: 'subscribers',
       url: '/content' + params.path + '/subscribers',
+    }, {
+      title: 'Send newsletter',
+      name: 'send',
+      url: '/content' + params.path + '/send',
     }],
   });
 
@@ -68,6 +72,17 @@ Modules.Newsletter.load = function(params) {
         bulbs: 'Content',
         bulb: 'm:newsletter',
         subbulb: 'subscribers',
+      }},
+    });
+
+    this.route(params.name + '_send_dashboard', {
+      path: '/content' + params.path + '/send',
+      template: 'newsletter_send_email',
+      layoutTemplate: 'adminLayout',
+      data: {impact: {
+        bulbs: 'Content',
+        bulb: 'm:newsletter',
+        subbulb: 'send',
       }},
     });
 

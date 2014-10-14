@@ -1,0 +1,23 @@
+<template name="newsletter_send_email">
+  
+  <form role="form">
+    <div class="form-group">
+      <label for="inputNewsletter">Newsletter</label>
+      <select id="inputNewsletter" class="form-control" placeholder="Select newsletter">
+        {{#each newsletters}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="inputTitle">Email title</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Email title">
+    </div>
+    <div class="form-group">
+      <label for="inputContent">Content</label>
+      <textarea class="form-control" id="inputContent" placeholder="Content"></textarea>
+    </div>
+    <input type="button" class="btn btn-primary" id="submit" value="Send a newsletter email"/>
+  </form>
+
+</template>
