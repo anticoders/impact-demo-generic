@@ -19,6 +19,7 @@ Package.onUse(function (api, where) {
     'mrt:moment@2.8.1',
     'mrt:timestamp@0.1.1',
     'anti:fake@0.4.1',
+    'anti:entry@0.1.0',
     // 'anti:mark@0.6.0',
   ], ['client', 'server']);
 
@@ -33,6 +34,7 @@ Package.onUse(function (api, where) {
     'mrt:moment@2.8.1',
     'mrt:timestamp@0.1.1',
     'anti:fake@0.4.1',
+    'anti:entry@0.1.0',
     // 'anti:mark@0.6.0',
   ]);
 
