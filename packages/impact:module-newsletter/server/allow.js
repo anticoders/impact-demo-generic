@@ -12,7 +12,8 @@ Modules.Newsletter.Newsletters.allow({
     return (!!user) && user.admin;
   },
   remove: function(userId, items) {
-    return false;
+    var user = Meteor.users.findOne(userId);
+    return (!!user) && user.admin;
   }
 });
 
@@ -26,7 +27,8 @@ Modules.Newsletter.Subscribers.allow({
     return (!!user) && user.admin;
   },
   remove: function(userId, items) {
-    return false;
+    var user = Meteor.users.findOne(userId);
+    return (!!user) && user.admin;
   }
 });
 

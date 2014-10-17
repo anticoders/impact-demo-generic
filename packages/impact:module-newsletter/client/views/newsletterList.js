@@ -16,3 +16,28 @@ Template.newsletter_newsletterList.helpers({
   },
 
 });
+
+Template.newsletter_newsletterList.events = {
+
+  //"click .fa.envelope-o" via link/routing
+
+  "click .fa-edit" : function () {
+    alert("There will be modal for editing. :)");
+  },
+
+  "click .fa-remove" : function () {
+    // I guess there should be a modal
+    Modules.Newsletter.Newsletters
+      .remove({_id: this._id});
+
+    // "Uncaught Error: Not permitted. Untrusted code may only update documents by ID. [403]"
+    Modules.Newsletter.Subscribers
+      .update(
+        {newsletters: this._id},
+        {$pull: {newsletters: this._id}},
+        {multi: true}
+      );
+
+  }
+
+};
