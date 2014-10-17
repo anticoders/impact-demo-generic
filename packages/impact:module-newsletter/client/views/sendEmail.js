@@ -1,8 +1,11 @@
 Template.newsletter_sendEmail.helpers({
 
-  'newsletters': function () {
-    return Modules.Newsletter.Newsletters
-      .find({}, {sort: {name: 1}});
+  'name': function () {
+
+    console.log(this);
+    
+    return this.name;
+
   },
 
 });
@@ -13,18 +16,19 @@ Template.newsletter_sendEmail.events = {
 
     var title = $('#inputTitle').val();
     var content = $('#inputContent').val();
-    var newsletter = $('#inputNewsletter').val();
 
     if (!content.length) return;
 
-    console.log({title: title, content: content, newsletter: newsletter});
+    console.log({title: title, content: content, newsletter: this.newsletter._id});
 
     Meteor.call('sendNewsletterEmail',
-                {title: title, content: content, newsletter: newsletter},
+                {title: title, content: content, newsletter: this.newsletter._id},
                 function (error, result) { if (result) { console.log("Email sent"); } });
 
     $('#inputTitle').val("");
     $('#inputContent').val("");
     
+    // some confirmation
+
   }
 };
