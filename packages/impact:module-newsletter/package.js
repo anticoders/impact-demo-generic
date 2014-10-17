@@ -41,6 +41,7 @@ Package.on_use(function (api, where) {
     'server/observe.js',
     'server/publish.js',
     'server/sendNewsletter.js',
+    'server/removeNewsletter.js',
   ], 'server');
 
 });

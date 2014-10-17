@@ -2,7 +2,7 @@ Template.newsletter_subscriberList.helpers({
 
   'subscribers': function () {
     return Modules.Newsletter.Subscribers
-        .find({}, {sort: {updatedAt: -1}})
+        .find({}, {sort: {createdAt: -1}})  // updatedAt gets crazy eg with newsletter removal
         .map(function (each, index) {
           each.index = index + 1;  // human-readable index, starting from 1
           return each;

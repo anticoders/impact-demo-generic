@@ -27,17 +27,7 @@ Template.newsletter_newsletterList.events = {
 
   "click .fa-remove" : function () {
     // I guess there should be a modal
-    Modules.Newsletter.Newsletters
-      .remove({_id: this._id});
-
-    // "Uncaught Error: Not permitted. Untrusted code may only update documents by ID. [403]"
-    Modules.Newsletter.Subscribers
-      .update(
-        {newsletters: this._id},
-        {$pull: {newsletters: this._id}},
-        {multi: true}
-      );
-
+    Meteor.call("removeNewsletter", this._id, function (error, result) {  });
   }
 
 };
