@@ -1,4 +1,4 @@
-Template.newsletter_add_newsletter.events = {
+Template.newsletter_addNewsletter.events = {
 
   "click #submit" : function () {
 

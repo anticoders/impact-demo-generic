@@ -1,4 +1,4 @@
-Template.newsletter_add_subscriber.helpers({
+Template.newsletter_addSubscriber.helpers({
 
   'newsletters': function () {
     return Modules.Newsletter.Newsletters
@@ -7,7 +7,7 @@ Template.newsletter_add_subscriber.helpers({
 
 });
 
-Template.newsletter_add_subscriber.events = {
+Template.newsletter_addSubscriber.events = {
 
   "click #submit" : function () {
 

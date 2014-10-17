@@ -1,28 +1,28 @@
-<template name="newsletter_newsletter_list">
+<template name="newsletter_subscriberList">
 
-  {{> newsletter_add_newsletter}}
+  {{> newsletter_addSubscriber}}
 
-  <table class="table table-hover table-hover">
+  <table class="table table-condensed table-hover">
     <thead>
       <tr>
         <th>#</th>
         <th>Name</th>
-        <th>Subscribers</th>
+        <th>Email</th>
+        <th>Newsletters</th>
         <th>Created</th>
         <th>Updated</th>
-        <th>Options</th>
       </tr>
     </thead>
     <tbody>
 
-      {{#each newsletters}}
+      {{#each subscribers}}
         <tr>
           <td>{{index}}</td>
           <td>{{name}}</td>
-          <td>{{subscriberCount _id}}</td>
+          <td>{{email}}</td>
+          <td>{{length newsletters}}</td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
-          <td><a class="remove" href="{{_id}}">remove (TODO)</a></td>
         </tr>
       {{/each}}
 

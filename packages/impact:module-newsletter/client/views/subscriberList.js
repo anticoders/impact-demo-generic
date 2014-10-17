@@ -1,4 +1,4 @@
-Template.newsletter_subscriber_list.helpers({
+Template.newsletter_subscriberList.helpers({
 
   'subscribers': function () {
     return Modules.Newsletter.Subscribers

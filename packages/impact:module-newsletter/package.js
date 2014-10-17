@@ -23,16 +23,16 @@ Package.on_use(function (api, where) {
   api.addFiles([
     'client/config.js',
     'client/subscribe.js',
-    'client/views/newsletter_list.html',
-    'client/views/newsletter_list.js',
-    'client/views/subscriber_list.html',
-    'client/views/subscriber_list.js',
-    'client/views/add_newsletter.html',
-    'client/views/add_newsletter.js',
-    'client/views/add_subscriber.html',
-    'client/views/add_subscriber.js',
-    'client/views/send_email.html',
-    'client/views/send_email.js',
+    'client/views/newsletterList.html',
+    'client/views/newsletterList.js',
+    'client/views/subscriberList.html',
+    'client/views/subscriberList.js',
+    'client/views/addNewsletter.html',
+    'client/views/addNewsletter.js',
+    'client/views/addSubscriber.html',
+    'client/views/addSubscriber.js',
+    'client/views/sendEmail.html',
+    'client/views/sendEmail.js',
   ], 'client');
 
   api.addFiles([
@@ -40,7 +40,7 @@ Package.on_use(function (api, where) {
     'server/fake.js',
     'server/observe.js',
     'server/publish.js',
-    'server/send_newsletter.js',
+    'server/sendNewsletter.js',
   ], 'server');
 
 });

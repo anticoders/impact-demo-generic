@@ -1,4 +1,4 @@
-Template.newsletter_send_email.helpers({
+Template.newsletter_sendEmail.helpers({
 
   'newsletters': function () {
     return Modules.Newsletter.Newsletters
@@ -7,7 +7,7 @@ Template.newsletter_send_email.helpers({
 
 });
 
-Template.newsletter_send_email.events = {
+Template.newsletter_sendEmail.events = {
 
   "click #submit" : function () {
 

@@ -1,4 +1,4 @@
-Template.newsletter_newsletter_list.helpers({
+Template.newsletter_newsletterList.helpers({
 
   'newsletters': function () {
     return Modules.Newsletter.Newsletters
@@ -9,9 +9,9 @@ Template.newsletter_newsletter_list.helpers({
       });
   },
 
-  'subscriberCount': function (newsletter_id) {
+  'subscriberCount': function (newsletterId) {
     return Modules.Newsletter.Subscribers
-             .find({newsletters: newsletter_id})
+             .find({newsletters: newsletterId})
              .count();
   },
 

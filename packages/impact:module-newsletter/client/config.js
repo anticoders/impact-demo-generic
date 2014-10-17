@@ -32,7 +32,7 @@ Modules.Newsletter.load = function(params) {
     if(params.home) {
       this.route('home', {
         path: '/',
-        template: 'newsletter_newsletter_list',
+        template: 'newsletter_newsletterList',
         layoutTemplate: 'panelsLayout',
       });
     }
@@ -55,7 +55,7 @@ Modules.Newsletter.load = function(params) {
 
     this.route(params.name + '_dashboard', {
       path: '/content' + params.path,
-      template: 'newsletter_newsletter_list',
+      template: 'newsletter_newsletterList',
       layoutTemplate: 'adminLayout',
       data: {impact: {
         bulbs: 'Content',
@@ -66,7 +66,7 @@ Modules.Newsletter.load = function(params) {
 
     this.route(params.name + '_subscriber_dashboard', {
       path: '/content' + params.path + '/subscribers',
-      template: 'newsletter_subscriber_list',
+      template: 'newsletter_subscriberList',
       layoutTemplate: 'adminLayout',
       data: {impact: {
         bulbs: 'Content',
@@ -77,7 +77,7 @@ Modules.Newsletter.load = function(params) {
 
     this.route(params.name + '_send_dashboard', {
       path: '/content' + params.path + '/send',
-      template: 'newsletter_send_email',
+      template: 'newsletter_sendEmail',
       layoutTemplate: 'adminLayout',
       data: {impact: {
         bulbs: 'Content',

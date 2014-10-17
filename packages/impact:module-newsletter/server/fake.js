@@ -20,7 +20,7 @@ _.times(5, function() {
   });
 });
 
-var newsletter_ids = Modules.Newsletter.Newsletters
+var newsletterIds = Modules.Newsletter.Newsletters
   .find({})
   .fetch()
   .map(function (each) { return each._id; });
@@ -33,7 +33,7 @@ _.times(40, function() {
   Modules.Newsletter.Subscribers.insert({
     name: fakeUser.fullname,
     email: fakeUser.email,
-    newsletters: _.sample(newsletter_ids, _.sample(counts_distribution)),
+    newsletters: _.sample(newsletterIds, _.sample(counts_distribution)),
 
     createdAt: moment().valueOf(),
     updatedAt: moment().valueOf(),
