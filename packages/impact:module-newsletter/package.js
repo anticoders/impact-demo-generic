@@ -36,6 +36,7 @@ Package.on_use(function (api, where) {
   ], 'client');
 
   api.addFiles([
+    'server/configSender.js',
     'server/allow.js',
     'server/fake.js',
     'server/observe.js',

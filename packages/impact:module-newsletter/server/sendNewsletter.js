@@ -16,7 +16,7 @@ Meteor.methods({
 
       Email.send({
         to: email,
-        from: "hubert@orlikarnia.com",
+        from: Modules.Newsletter.from,
         subject: params.title,
         text: params.content
       });
