@@ -1,9 +1,12 @@
 Template.newsletter_sendEmail.helpers({
 
   'subscriberCount': function () {
-    return Modules.Newsletter.Subscribers
-             .find({newsletters: this.newsletter._id})
-             .count();
+    if (!!this.newsletter)
+      return Modules.Newsletter.Subscribers
+               .find({newsletters: this.newsletter._id})
+               .count();
+    else
+      return "";
   },
 
 });
@@ -18,16 +21,14 @@ Template.newsletter_sendEmail.events = {
 
     if (!content.length) return;
 
-    console.log({title: title, content: content, newsletter: this.newsletter._id});
-
     Meteor.call('sendNewsletterEmail',
                 {title: title, content: content, newsletter: this.newsletter._id},
                 function (error, result) { if (result) { console.log("Email sent"); } });
 
     $('#inputTitle').val("");
     $('#inputContent').val("");
-    
-    // some confirmation
+
+    AntiModals.alert("Email sent!");
 
   }
 };

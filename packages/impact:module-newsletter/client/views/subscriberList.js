@@ -22,9 +22,17 @@ Template.newsletter_subscriberList.events = {
   },
 
   "click .fa-remove" : function () {
-    // I guess there should be a modal
-    Modules.Newsletter.Subscribers
-      .remove({_id: this._id});
+
+    var text = "Do you really want to delete subscriber " + this.email + "?";
+    var subscriberId = this._id;
+
+    AntiModals.confirm(text, function (error, result) {
+      if (!!result) {
+        Modules.Newsletter.Subscribers
+          .remove({_id: subscriberId});
+      }
+    });
+
   }
 
 };

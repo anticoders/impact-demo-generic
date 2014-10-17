@@ -26,8 +26,17 @@ Template.newsletter_newsletterList.events = {
   },
 
   "click .fa-remove" : function () {
-    // I guess there should be a modal
-    Meteor.call("removeNewsletter", this._id, function (error, result) {  });
+
+    var text = "Do you really want to delete newsletter " + this.name + "?";
+    var newsletterId = this._id;
+
+    AntiModals.confirm(text, function (error, result) {
+      console.log(result);
+      if (!!result) {
+        Meteor.call("removeNewsletter", newsletterId, function (error, result) {  });
+      }
+    });
+
   }
 
 };
