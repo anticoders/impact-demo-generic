@@ -1,14 +1,13 @@
 Template.newsletter_sendEmail.helpers({
 
-  'name': function () {
-
-    console.log(this);
-    
-    return this.name;
-
+  'subscriberCount': function () {
+    return Modules.Newsletter.Subscribers
+             .find({newsletters: this.newsletter._id})
+             .count();
   },
 
 });
+
 
 Template.newsletter_sendEmail.events = {
 
