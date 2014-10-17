@@ -1,0 +1,39 @@
+<template name="newsletter_emailList">
+
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Length</th>
+        <th>Sent</th>
+        <th>Created</th>
+        <th>Updated</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each emails}}
+        <tr>
+          <td>{{index}}</td>
+          <td>{{title}}</td>
+          <td>{{length content}}</td>
+          <td>{{date sentAt}}</td>
+          <td>{{date createdAt}}</td>
+          <td>{{date updatedAt}}</td>
+          <td>
+              {{#if sent}}
+                sent
+              {{else}}
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-remove"></i>
+              {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+
+</template>

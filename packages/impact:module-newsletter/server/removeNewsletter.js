@@ -5,6 +5,9 @@ Meteor.methods({
 
   removeNewsletter: function (newsletterId) {
 
+    // or maybe rather disable?
+    // (otherwise there will be a problem in emails history)
+
     Modules.Newsletter.Newsletters
       .remove({_id: newsletterId});
 

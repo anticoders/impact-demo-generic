@@ -39,7 +39,9 @@ _.times(40, function() {
     updatedAt: moment().valueOf(),
   });
 });
-  
+
+// fake emails
+
 // QUESTION:
 // Aren't we duplicating dates from observe.js?
 

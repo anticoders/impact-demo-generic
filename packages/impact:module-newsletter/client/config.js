@@ -13,13 +13,17 @@ Modules.Newsletter.load = function(params) {
     url: '/content' + params.path,
     icon: 'paperclip',
     subbulbs: [{
-      title: 'List newsletters',
+      title: 'Newsletters',
       name: 'newsletters',
       url: '/content' + params.path,
     }, {
-      title: 'List subscribers',
+      title: 'Subscribers',
       name: 'subscribers',
       url: '/content' + params.path + '/subscribers',
+    }, {
+      title: 'Emails',
+      name: 'subscribers',
+      url: '/content' + params.path + '/emails',
     }],
   });
 
@@ -68,6 +72,17 @@ Modules.Newsletter.load = function(params) {
         bulbs: 'Content',
         bulb: 'm:newsletter',
         subbulb: 'subscribers',
+      }},
+    });
+
+    this.route(params.name + '_emails_dashboard', {
+      path: '/content' + params.path + '/emails',
+      template: 'newsletter_emailList',
+      layoutTemplate: 'adminLayout',
+      data: {impact: {
+        bulbs: 'Content',
+        bulb: 'm:newsletter',
+        subbulb: 'emails',
       }},
     });
 

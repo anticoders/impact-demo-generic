@@ -40,6 +40,25 @@ Modules.Newsletter.Subscribers.find({}).observeChanges({
   },
 });
 
+Modules.Newsletter.Emails.find({}).observeChanges({
+  added: function(id, fields) {
+    Meteor.setTimeout(function() {
+      var item = Modules.Newsletter.Emails.findOne(id);
+      if(!item.createdAt) {
+        Modules.Newsletter.Emails.update(id, {$set: {createdAt: new Date().getTime()}});
+      }
+    }, 1);
+  },
+
+  changed: function(id, changes) {
+    if(_.size(changes) === 1) {
+      Meteor.setTimeout(function() {
+        Modules.Newsletter.Emails.update(id, {$set: {updatedAt: new Date().getTime()}});
+      }, 1);
+    }
+  },
+});
+
 //////////////////////////////////
 /*************************/});/**/
 //////////////////////////////////

@@ -13,6 +13,11 @@ Meteor.publish("newsletter_subscribers", function() {
 });
 
 
+Meteor.publish("newsletter_emails", function() {
+  return Modules.Newsletter.Emails.find({});
+});
+
+
 //// If we want to restrict to admin:
 //
 // var user = Meteor.users.findOne(this.userId);

@@ -6,3 +6,6 @@ Deps.autorun(function(){
   Meteor.subscribe('newsletter_subscribers');
 });
 
+Deps.autorun(function(){
+  Meteor.subscribe('newsletter_emails');
+});

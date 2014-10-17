@@ -2,17 +2,23 @@
 Meteor.methods({
   sendNewsletterEmail: function (params) {
 
-    // params = {newsletter: newsletter_id, title: "...", content: ...}
+    // params = {newsletter: newsletter_id, title: "...", content: ..., when: ...}
 
-    this.unblock();
+    Modules.Newsletter.Emails
+      .insert({
+        title:   params.title,
+        content: params.content,
+        sent:    true,
+        sentAt:  params.when || moment().valueOf()  
+      });
 
     var emails = Modules.Newsletter.Subscribers
       .find({newsletters: params.newsletter})
       .map(function (each) { return each.email; });
 
-    emails.forEach(function (email) {
+    this.unblock();
 
-      console.log("Email '" + params.title + "' sent to " + email);
+    emails.forEach(function (email) {
 
       Email.send({
         to: email,

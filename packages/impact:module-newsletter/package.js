@@ -33,6 +33,8 @@ Package.on_use(function (api, where) {
     'client/views/addSubscriber.js',
     'client/views/sendEmail.html',
     'client/views/sendEmail.js',
+    'client/views/emailList.html',
+    'client/views/emailList.js',
   ], 'client');
 
   api.addFiles([
