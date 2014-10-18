@@ -50,8 +50,9 @@ Modules.Newsletter.Emails.find({}).observeChanges({
     }, 1);
   },
 
+  // it dislikes setting 'sent' (I dont want to )
   changed: function(id, changes) {
-    if(_.size(changes) === 1) {
+    if(changes.sent !== true) {
       Meteor.setTimeout(function() {
         Modules.Newsletter.Emails.update(id, {$set: {updatedAt: new Date().getTime()}});
       }, 1);
