@@ -36,6 +36,8 @@ Package.on_use(function (api, where) {
     'client/views/sendEmail.js',
     'client/views/emailList.html',
     'client/views/emailList.js',
+    'client/views/modalSubscribedNewsletters.html',
+    'client/views/modalSubscribedNewsletters.js',
   ], 'client');
 
   api.addFiles([
