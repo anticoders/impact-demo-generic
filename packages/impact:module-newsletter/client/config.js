@@ -97,8 +97,34 @@ Modules.Newsletter.load = function(params) {
             bulb: 'm:newsletter',
             subbulb: 'send',
           },
-          newsletter: Modules.Newsletter.Newsletters.findOne({_id: this.params._id}),
+          newsletter: Modules.Newsletter.Newsletters.findOne(this.params._id),
         };
+      },
+      action : function () {
+        if (this.ready()) {
+          this.render();
+        }
+      },
+    });
+
+    this.route(params.name + '_edit', {
+      path: '/content' + params.path + '/edit/:_id',
+      template: 'newsletter_sendEmail',
+      layoutTemplate: 'adminLayout',
+      data: function() {
+        return {
+          impact: {
+            bulbs: 'Content',
+            bulb: 'm:newsletter',
+            subbulb: 'edit',
+          },
+          email: Modules.Newsletter.Emails.findOne(this.params._id)
+        };
+      },
+      action : function () {
+        if (this.ready()) {
+          this.render();
+        }
       },
     });
 

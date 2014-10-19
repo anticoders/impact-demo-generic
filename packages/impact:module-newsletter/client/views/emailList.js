@@ -2,7 +2,7 @@ Template.newsletter_emailList.helpers({
 
   'emails': function () {
     return Modules.Newsletter.Emails
-      .find({}, {sort: {updatedAt: -1}})
+      .find({}, {sort: {updatedAt: -1, createdAt: -1}})
       .map(function (each, index, all) {
         each.index = all.count() - index;  // human-readable index, starting from
         return each;
@@ -23,9 +23,7 @@ Template.newsletter_emailList.helpers({
 
 Template.newsletter_emailList.events = {
 
-  "click .fa-edit" : function () {
-    alert("TO DO");
-  },
+  // "click .fa-edit" -> via link
 
   "click .fa-remove" : function () {
 
