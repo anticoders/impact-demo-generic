@@ -23,6 +23,7 @@ Package.on_use(function (api, where) {
   api.addFiles([
     'client/config.js',
     'client/subscribe.js',
+    'client/helpers/changeFieldModal.js',
     'client/views/newsletterList.html',
     'client/views/newsletterList.js',
     'client/views/subscriberList.html',

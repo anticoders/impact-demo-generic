@@ -35,22 +35,12 @@ Template.newsletter_newsletterList.events = {
 
   },
 
-  'click .name': function(e, t) {
-    var that = this;
-    AntiModals.prompt({
-      title:    'Update',
-      message:  "Change name of the newsletter " + that.name + " to:" ,
-      ok:       'Change',
-      cancel:   'Cancel',
-      closer:   true,
-    }, function (error, result) {
-      if (!!result && !!result.value) {
-        Modules.Newsletter.Newsletters.update(
-          that._id, {
-            $set: {name: result.value}
-        });
-      }
-    });
-  },
+  'click .name': function () {
+    NewsletterHelpers.changeField(
+      Modules.Newsletter.Newsletters,
+      this._id, 
+      'name',
+      "the newsletter " + this.name)
+  }
 
 };
