@@ -9,6 +9,12 @@ Template.newsletter_emailList.helpers({
       });
   },
 
+  'newsletterName': function (newsletterId) {
+    var newsletter = Modules.Newsletter.Newsletters.findOne(newsletterId);
+    newsletter = newsletter || {name: "(removed)"};  // dealing with removed newsletters
+    return newsletter.name;
+  },
+
   'length': function (arr) {
     return arr.length;
   },

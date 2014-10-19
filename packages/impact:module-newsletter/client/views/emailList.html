@@ -6,6 +6,7 @@
         <th>#</th>
         <th>Title</th>
         <th>Length</th>
+        <th>Newsletter</th>
         <th>Sent</th>
         <th>Created</th>
         <th>Updated</th>
@@ -19,16 +20,23 @@
           <td>{{index}}</td>
           <td>{{title}}</td>
           <td>{{length content}}</td>
-          <td>{{date sentAt}}</td>
+          <td>{{newsletterName newsletter}}</td>
+          <td>
+            {{#if sent}}
+              {{date sentAt}}
+            {{else}}
+              ({{date sentAt}})
+            {{/if}}
+          </td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
           <td>
-              {{#if sent}}
-                sent
-              {{else}}
-                <i class="fa fa-edit"></i>
-                <i class="fa fa-remove"></i>
-              {{/if}}
+            <i class="fa fa-edit"></i>
+            {{#if sent}}
+              
+            {{else}}
+              <i class="fa fa-remove"></i>
+            {{/if}}
           </td>
         </tr>
       {{/each}}

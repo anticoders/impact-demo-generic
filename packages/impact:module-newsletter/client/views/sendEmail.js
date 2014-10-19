@@ -31,10 +31,11 @@ Template.newsletter_sendEmail.events = {
 
    var emailId = Modules.Newsletter.Emails
       .insert({
-        title:   title,
-        content: content,
-        sent:    false,
-        sentAt:  when || moment().valueOf()  
+        title:      title,
+        content:    content,
+        newsletter: this.newsletter,
+        sent:       false,
+        sentAt:     when || moment().valueOf()  
       });
 
     if (when === false) {
