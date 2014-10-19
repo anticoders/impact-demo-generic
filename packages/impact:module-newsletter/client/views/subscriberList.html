@@ -19,13 +19,12 @@
       {{#each subscribers}}
         <tr>
           <td>{{index}}</td>
-          <td>{{name}}</td>
-          <td>{{email}}</td>
+          <td><span class='name'>{{name}}</span></td>
+          <td><span class='email'>{{email}}</span></td>
           <td>{{length newsletters}}</td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
           <td>
-            <i class="fa fa-edit"></i>
             <i class="fa fa-remove"></i>
           </td>
         </tr>
