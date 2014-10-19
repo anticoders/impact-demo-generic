@@ -21,10 +21,6 @@ Template.newsletter_newsletterList.events = {
 
   //"click .fa.envelope-o" via link/routing
 
-  "click .fa-edit" : function () {
-    alert("There will be modal for editing. :)");
-  },
-
   "click .fa-remove" : function () {
 
     var text = "Do you really want to delete newsletter " + this.name + "?";
@@ -37,6 +33,24 @@ Template.newsletter_newsletterList.events = {
       }
     });
 
-  }
+  },
+
+  'click .name': function(e, t) {
+    var that = this;
+    AntiModals.prompt({
+      title:    'Update',
+      message:  "Change name of the newsletter " + that.name + " to:" ,
+      ok:       'Change',
+      cancel:   'Cancel',
+      closer:   true,
+    }, function (error, result) {
+      if (!!result && !!result.value) {
+        Modules.Newsletter.Newsletters.update(
+          that._id, {
+            $set: {name: result.value}
+        });
+      }
+    });
+  },
 
 };

@@ -18,7 +18,7 @@
       {{#each newsletters}}
         <tr>
           <td>{{index}}</td>
-          <td>{{name}}</td>
+          <td><span class="name">{{name}}</span></td>
           <td>{{subscriberCount _id}}</td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
@@ -26,7 +26,6 @@
             <a href="{{pathFor 'newsletter_send'}}" style="text-decoration: none; color: black">
               <i class="fa fa-envelope-o"></i>
             </a>
-            <i class="fa fa-edit"></i>
             <i class="fa fa-remove"></i>
           </td>
         </tr>
