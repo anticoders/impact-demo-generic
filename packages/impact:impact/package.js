@@ -20,6 +20,10 @@ Package.onUse(function (api, where) {
     'mrt:timestamp@0.1.1',
     'anti:fake@0.4.1',
     'anti:entry@0.1.0',
+
+    'aldeed:collection2@2.2.0',
+    'aldeed:simple-schema@1.0.3',
+    'aldeed:autoform@4.0.0-rc6',
     // 'anti:mark@0.6.0',
   ], ['client', 'server']);
 
@@ -36,6 +40,10 @@ Package.onUse(function (api, where) {
     'anti:fake@0.4.1',
     'anti:entry@0.1.0',
     // 'anti:mark@0.6.0',
+
+    'aldeed:collection2@2.2.0',
+    'aldeed:simple-schema@1.0.3',
+    'aldeed:autoform@4.0.0-rc6',
   ]);
 
   api.addFiles([

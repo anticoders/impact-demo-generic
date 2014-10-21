@@ -9,6 +9,18 @@
       "1.0.2"
     ],
     [
+      "aldeed:autoform",
+      "4.0.0-rc6"
+    ],
+    [
+      "aldeed:collection2",
+      "2.2.0"
+    ],
+    [
+      "aldeed:simple-schema",
+      "1.0.3"
+    ],
+    [
       "anti:entry",
       "0.1.1"
     ],
@@ -163,6 +175,10 @@
     [
       "mongo",
       "1.0.6"
+    ],
+    [
+      "mongo-livedata",
+      "1.0.5"
     ],
     [
       "mrt:moment",

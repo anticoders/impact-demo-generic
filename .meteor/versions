@@ -1,5 +1,8 @@
 accounts-base@1.1.1
 accounts-password@1.0.2
+aldeed:autoform@4.0.0-rc6
+aldeed:collection2@2.2.0
+aldeed:simple-schema@1.0.3
 anti:entry@0.1.1
 anti:fake@0.4.1
 anti:modals@0.3.0
@@ -43,6 +46,7 @@ meteor@1.1.1
 minifiers@1.1.0
 minimongo@1.0.3
 mobile-status-bar@1.0.0
+mongo-livedata@1.0.5
 mongo@1.0.6
 mrt:moment@2.8.1
 mrt:timestamp@0.1.1
