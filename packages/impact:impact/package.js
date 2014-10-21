@@ -117,5 +117,5 @@ Package.onUse(function (api, where) {
     'files/impact128.png',
   ], ['client', 'server'], {isAsset: true});
 
-  api.export(['App', 'Modules', 'Widgets', 'Media', 'Panels']);
+  api.export(['App', 'Modules', 'Widgets', 'Media', 'Panels', 'Impact', 'M', 'Helpers']);
 });

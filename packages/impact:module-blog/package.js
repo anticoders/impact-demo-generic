@@ -12,16 +12,18 @@ Package.onUse(function (api, where) {
 
 
   api.addFiles([
-    'both/index.js',
-    'both/model.js',
-    'both/config.js',
+    'both/_index.js',
+    'both/init.js',
+    'both/initDb.js',
+    'both/initContent.js',
+    'both/initViews.js',
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/dashboard/dashboard.html',
-    'client/dashboard/dashboard.js',
-    'client/dashboard/edit.html',
-    'client/dashboard/edit.js',
+    'client/content/dashboard.html',
+    'client/content/dashboard.js',
+    'client/content/edit.html',
+    'client/content/edit.js',
 
     'client/views/article.html',
     'client/views/article.js',
@@ -33,9 +35,9 @@ Package.onUse(function (api, where) {
   ], 'client');
 
   api.addFiles([
-    'server/allow.js',
-    'server/fake.js',
-    'server/publish.js',
+    'server/initPrivileges.js',
+    'server/initFake.js',
+    'server/initPublications.js',
   ], 'server');
 
 });
