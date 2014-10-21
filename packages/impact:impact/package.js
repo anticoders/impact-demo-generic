@@ -41,11 +41,14 @@ Package.onUse(function (api, where) {
   api.addFiles([
     'both/index.js',
     'both/model.js',
+
+    'both/utils/makeShallow.js',
   ], ['client', 'server']);
 
   api.addFiles([
 
-    'client/helpers/dateHelpers.js',
+    'client/helpers/_helpers.js',
+    'client/helpers/date.js',
     'client/helpers/logic.js',
 
     'client/layouts/_.lessimport',

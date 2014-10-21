@@ -10,12 +10,19 @@
   publishedAt   // moment
   updatedAt     // moment
 */
-Modules.Blog.Articles = new Meteor.Collection('blog_articles', {
+
+
+Modules.Blog.init.db = function(m, params) {
+  m.Articles = new Meteor.Collection(params.name + '_articles');
+};
+
+
+// Modules.Blog.Articles = new Meteor.Collection('blog_articles', {
   
   // transform: function(article) {
   //   article.seo = Utils.clean(article.title);
   //   return article;
   // },
 
-});
+// });
 

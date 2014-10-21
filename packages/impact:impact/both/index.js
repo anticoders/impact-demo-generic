@@ -40,3 +40,12 @@ Panels.User.bulbs = [
   Panels.User.theBulbs,
 ];
 
+
+// instances
+
+Impact = {
+  utils: {},
+};
+M = {};
+
+

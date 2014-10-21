@@ -9,6 +9,13 @@ Modules.Blog.load({
   home: false,
 });
 
+Modules.Blog.load({
+  name: 'news',
+  path: '/news',
+  articlePath: '/n',
+  home: false,
+});
+
 Modules.Example.load({
   name: 'example',
   path: '/example',

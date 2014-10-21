@@ -8,6 +8,8 @@ Package.describe({
 Package.on_use(function (api, where) {
 
   api.versionsFrom('METEOR@0.9.3');
+// email
+// tsega:bootstrap3-datetimepicker
 
   api.use(['impact:impact'], ['client', 'server']);
   api.imply(['impact:impact'], ['client', 'server']);
@@ -24,20 +26,20 @@ Package.on_use(function (api, where) {
     'client/config.js',
     'client/subscribe.js',
     'client/helpers/changeFieldModal.js',
-    'client/views/newsletterList.html',
-    'client/views/newsletterList.js',
-    'client/views/subscriberList.html',
-    'client/views/subscriberList.js',
-    'client/views/addNewsletter.html',
-    'client/views/addNewsletter.js',
-    'client/views/addSubscriber.html',
-    'client/views/addSubscriber.js',
-    'client/views/sendEmail.html',
-    'client/views/sendEmail.js',
-    'client/views/emailList.html',
-    'client/views/emailList.js',
-    'client/views/modalSubscribedNewsletters.html',
-    'client/views/modalSubscribedNewsletters.js',
+    'client/dashboard/newsletterList.html',
+    'client/dashboard/newsletterList.js',
+    'client/dashboard/subscriberList.html',
+    'client/dashboard/subscriberList.js',
+    'client/dashboard/addNewsletter.html',
+    'client/dashboard/addNewsletter.js',
+    'client/dashboard/addSubscriber.html',
+    'client/dashboard/addSubscriber.js',
+    'client/dashboard/sendEmail.html',
+    'client/dashboard/sendEmail.js',
+    'client/dashboard/emailList.html',
+    'client/dashboard/emailList.js',
+    'client/dashboard/modalSubscribedNewsletters.html',
+    'client/dashboard/modalSubscribedNewsletters.js',
   ], 'client');
 
   api.addFiles([

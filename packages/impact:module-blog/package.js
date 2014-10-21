@@ -14,6 +14,7 @@ Package.onUse(function (api, where) {
   api.addFiles([
     'both/index.js',
     'both/model.js',
+    'both/config.js',
   ], ['client', 'server']);
 
   api.addFiles([
@@ -28,7 +29,6 @@ Package.onUse(function (api, where) {
     'client/views/list.html',
     'client/views/list.js',
 
-    'client/config.js',
     'client/subscribe.js',
   ], 'client');
 

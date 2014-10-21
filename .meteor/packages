@@ -1,11 +1,13 @@
 impact:impact
 impact:bootstrap
-chrismbeckett:fontawesome4
-anti:modals
+
+
 impact:module-blog
-impact:module-example
-impact:widget-cover
-email
-impact:module-newsletter
-tsega:bootstrap3-datetimepicker
+
+
+# impact:module-example
+# impact:widget-cover
+# impact:module-newsletter
+
+
 
