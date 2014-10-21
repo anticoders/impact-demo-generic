@@ -13,8 +13,9 @@ Package.onUse(function (api, where) {
     'less',
     'accounts-base',
     'accounts-password',
+    'showdown',
 
-    'iron:router@0.9.0',
+    'iron:router@0.9.4',
 
     'mrt:moment@2.8.1',
     'mrt:timestamp@0.1.1',
@@ -32,8 +33,9 @@ Package.onUse(function (api, where) {
     'less',
     'accounts-base',
     'accounts-password',
+    'showdown',
 
-    'iron:router@0.9.0',
+    'iron:router@0.9.4',
 
     'mrt:moment@2.8.1',
     'mrt:timestamp@0.1.1',
@@ -58,6 +60,8 @@ Package.onUse(function (api, where) {
     'client/helpers/_helpers.js',
     'client/helpers/date.js',
     'client/helpers/logic.js',
+    'client/helpers/mPathFor.js',
+    'client/helpers/closestData.js',
 
     'client/layouts/_.lessimport',
     'client/layouts/index.less',

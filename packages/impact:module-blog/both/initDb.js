@@ -37,7 +37,7 @@ Modules.Blog.init.db = function(m, params) {
       },
     },
 
-    published: {
+    publishedAt: {
       type: Date,
       optional: true,
       autoValue: function() {

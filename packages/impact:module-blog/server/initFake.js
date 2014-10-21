@@ -34,7 +34,7 @@ Modules.Blog.init.fake = function(m, params) {
     });
   });
 
-  _.times(20, function() {
+  _.times(12, function() {
     m.Articles.insert({
       title:      randomLine(),
       seo:        randomSeo(),

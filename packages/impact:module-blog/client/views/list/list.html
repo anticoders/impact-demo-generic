@@ -1,7 +1,7 @@
 <template name="blog_list">
 
   {{#each articles}}
-    <a href="{{pathFor 'blog_article' ref='home'}}" class="content-list-item">
+    <a href="{{mPathFor 'article'}}" class="content-list-item">
       <div>
         <small class="text-muted">{{date publishedAt}}</small>
         <h3>{{#markdown}}{{title}}{{/markdown}}</h3>

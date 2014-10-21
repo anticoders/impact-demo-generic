@@ -1,5 +1,18 @@
 Modules.Blog.init.publications = function(m, params) {
   
+  Meteor.publish('m:' + m.name + '-article', function(_id) {
+    return m.Articles.find({_id: _id});
+  });
+
+  Meteor.publish('m:' + m.name + '-articles', function() {
+    return m.Articles.find({published: true});
+  });
+
+  Meteor.publish('m:' + m.name + '-allArticles', function() {
+    return m.Articles.find({});
+  });
+
+
 
 
 /*

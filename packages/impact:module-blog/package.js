@@ -20,16 +20,16 @@ Package.onUse(function (api, where) {
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/content/dashboard.html',
-    'client/content/dashboard.js',
-    'client/content/edit.html',
-    'client/content/edit.js',
+    'client/content/index/index.html',
+    'client/content/index/index.js',
+    'client/content/edit/edit.html',
+    'client/content/edit/edit.js',
 
-    'client/views/article.html',
-    'client/views/article.js',
-    'client/views/articleToEdit.html',
-    'client/views/list.html',
-    'client/views/list.js',
+    'client/views/article/article.html',
+    'client/views/article/article.js',
+    // 'client/views/articleToEdit.html',
+    'client/views/list/list.html',
+    'client/views/list/list.js',
 
     'client/subscribe.js',
   ], 'client');

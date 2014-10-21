@@ -4,22 +4,41 @@ Modules.Blog.init.views = function(m, params) {
 
     // USER ROUTES //============================================================
 
-    this.route(params.name + '_list', {
-      path: params.path,
+    this.route(m.name + '_list', {
+      path: params.views.list.path,
       template: 'blog_list',
-      layoutTemplate: 'panelsLayout',
+      layoutTemplate: params.views.list.layout + 'Layout',
+
+      onBeforeAction: function() {
+        this.subscribe('m:' + m.name + '-articles');
+      },
+
+      data: function() {
+        return {
+          m: m,
+          articles: m.Articles.find({published: true}),
+        };
+      },
     });
 
-    this.route(params.name + '_article', {
-      path: params.articlePath + '/:seo/:_id',
+    this.route(m.name + '_article', {
+      path: params.views.show.path + '/:seo/:_id',
       template: 'blog_article',
-      layoutTemplate: 'panelsLayout',
-      yieldTemplates: {
-        'blog_articleToEdit': {to: 'top'},
+      layoutTemplate: params.views.show.layout + 'Layout',
+      // yieldTemplates: {
+      //   'blog_articleToEdit': {to: 'top'},
+      // },
+      
+      onBeforeAction: function() {
+        this.subscribe('m:' + m.name + '-article', this.params._id);
       },
-      data: function() { return {
-        article: Modules.Blog.Articles.findOne(this.params._id),
-      };},
+
+      data: function() {
+        return {
+          m: m,
+          article: m.Articles.findOne(this.params._id),
+        };
+      },
     });
 
 
