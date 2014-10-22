@@ -12,6 +12,10 @@ _.extend(Helpers, {
     return '';
   },
 
+  or: function(a, b, c, d, e, f, g, h) {
+    return a || b || c || d || e || f || g || h;
+  },
+
 });
 
 

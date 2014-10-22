@@ -19,12 +19,12 @@
 
 
       {{#each articles}}
-        <a href="{{pathFor 'blog_edit'}}" class="adminTableRow">
+        <a href="{{mPathFor 'edit'}}" class="adminTableRow">
           <span class="adminTableRowTop">
             <span class="">{{date createdAt}}</span>
           </span>
           <span class="adminTableRowContent">
-            <span class="">{{ensureTitle}}</span>
+            <span class="">{{or title "[UNTITLED]"}}</span>
           </span>
         </a>
       {{/each}}

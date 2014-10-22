@@ -25,5 +25,14 @@ Modules.Blog.init({
 });
 
 
+Router.map(function() {
 
+  this.route('home', {
+    path: '/',
+    action: function() {
+      Router.go('news_list');
+    },
+  });
+
+});
 

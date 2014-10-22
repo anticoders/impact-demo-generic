@@ -4,10 +4,7 @@
 _.extend(Helpers, {
   mPathFor: function(routeName, options) {
     var m = Template.closestData('m').m;
-    
-    var res = Router.helpers.pathFor.call(this, m.name + '_' + routeName, options);
-    console.log("MPF RES=", res);
-    return res;
+    return Router.helpers.pathFor.call(this, m.name + '_' + routeName, options);
   },
 });
 

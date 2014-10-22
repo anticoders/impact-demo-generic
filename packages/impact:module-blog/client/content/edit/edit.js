@@ -10,8 +10,8 @@ Template.blog_edit.created = function() {
 };
 
 Template.blog_edit.rendered = function() {
-  Crater.go(this);
-  Rainbow.color();
+  // Crater.go(this);
+  // Rainbow.color();
   // console.log("RENDERED", this.data.scroll);
   _.each(this.findAll('.zenTextarea'), function(textarea) {
     $(textarea).autogrow();
@@ -20,11 +20,11 @@ Template.blog_edit.rendered = function() {
 
   var t = this;
 
-  Crater.events(this, {
-    'toggle .blog_edit_publishedField': function(e) {
-      changed(e, t);
-    },
-  });
+  // Crater.events(this, {
+  //   'toggle .blog_edit_publishedField': function(e) {
+  //     changed(e, t);
+  //   },
+  // });
 };
 
 

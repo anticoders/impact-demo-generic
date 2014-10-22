@@ -24,31 +24,31 @@ Modules.Blog.init.content = function(m, params) {
 
   Router.map(function() {
 
-     this.route(params.name + '_dashboard', {
+    this.route(params.name + '_index', {
       path: '/content' + params.path,
       template: 'blog_dashboard',
       layoutTemplate: 'adminLayout',
-      data: {impact: {
-        bulbs: 'Content',
-        bulb: bulbName,
-        subbulb: 'list',
-      }},
+
+      onBeforeAction: function() {
+        this.subscribe('m:' + m.name + '-allArticles');
+      },
+
+      data: function() {
+        return {
+          impact: {
+            bulbs: 'Content',
+            bulb: bulbName,
+            subbulb: 'list',
+          },
+          m: m,
+          articles: m.Articles.find({}),
+        };
+      },
     });
 
     this.route(params.name + '_new', {
       path: '/content' + params.path + '/new',
-      template: 'blog_new',
-      layoutTemplate: 'adminLayout',
-      data: {impact: {
-        bulbs: 'Content',
-        bulb: bulbName,
-        subbulb: 'new',
-      }},
-    });
-
-    this.route(params.name + '_edit', {
-      path: '/content' + params.path + '/edit/:_id',
-      template: 'blog_new',
+      template: 'blog_edit',
       layoutTemplate: 'adminLayout',
       data: function() {
         return {
@@ -57,7 +57,29 @@ Modules.Blog.init.content = function(m, params) {
             bulb: bulbName,
             subbulb: 'new',
           },
-          article: Modules.Blog.Articles.findOne({_id: this.params._id}),
+          m: m,
+        };
+      },
+    });
+
+    this.route(params.name + '_edit', {
+      path: '/content' + params.path + '/edit/:_id',
+      template: 'blog_edit',
+      layoutTemplate: 'adminLayout',
+
+      onBeforeAction: function() {
+        this.subscribe('m:' + m.name + '-article', this.params._id);
+      },
+
+      data: function() {
+        return {
+          impact: {
+            bulbs: 'Content',
+            bulb: bulbName,
+            subbulb: 'new',
+          },
+          m: m,
+          article: m.Articles.findOne({_id: this.params._id}),
         };
       },
     });
