@@ -50,16 +50,20 @@ Modules.Blog.init.content = function(m, params) {
       path: '/content' + params.path + '/new',
       template: 'blog_edit',
       layoutTemplate: 'adminLayout',
-      data: function() {
-        return {
-          impact: {
-            bulbs: 'Content',
-            bulb: bulbName,
-            subbulb: 'new',
-          },
-          m: m,
-        };
+      action: function() {
+        var _id = m.Articles.insert({published: false});
+        location.replace(Router.path(m.name + '_edit', {_id: _id}));
       },
+      // data: function() {
+      //   return {
+      //     impact: {
+      //       bulbs: 'Content',
+      //       bulb: bulbName,
+      //       subbulb: 'new',
+      //     },
+      //     m: m,
+      //   };
+      // },
     });
 
     this.route(params.name + '_edit', {
@@ -76,7 +80,6 @@ Modules.Blog.init.content = function(m, params) {
           impact: {
             bulbs: 'Content',
             bulb: bulbName,
-            subbulb: 'new',
           },
           m: m,
           article: m.Articles.findOne({_id: this.params._id}),

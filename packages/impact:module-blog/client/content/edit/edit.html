@@ -4,6 +4,13 @@
 
 
     EDIT ARTICLE
+    {{#autoForm id="blog_edit_autoform" schema=schema doc=article}}
+      {{> afQuickField name="title"}}
+      {{> afQuickField name="seo"}}
+      {{> afQuickField name="summary"}}
+      {{> afQuickField name="content"}}
+      {{> afQuickField name="published"}}
+    {{/autoForm}}
 
 
   {{/with}}
