@@ -31,7 +31,7 @@ Package.onUse(function (api, where) {
     'client/views/list/list.html',
     'client/views/list/list.js',
 
-    'client/subscribe.js',
+    // 'client/subscribe.js',
   ], 'client');
 
   api.addFiles([
