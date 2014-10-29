@@ -1,0 +1,16 @@
+<template name="giftItem">
+	<div id="{{alias}}" class="gift-description {{#if reserved}}reserved{{/if}}">
+		<h3 class="cl-effect-1"><a href="http://{{url}}" target="_blank">{{name}}</a></h3>
+		<a href="http://{{url}}" target="_blank">
+			<img alt="{{alias}}Img" src="{{image}}" class="pull-left"/>
+		</a>
+		<p id="{{alias}}-description">
+			{{description}}
+		</p>
+		{{#if reserved}}
+		<button class="purelycss_elegance_button_reserve color_silver"><span class="icon-remove"></span>Zaklepane</button>
+		{{else}}
+		<input type="button" value="Zarezerwuj!" class="purelycss_elegance_button color_green hover_olive">
+		{{/if}}
+	</div>
+</template>	

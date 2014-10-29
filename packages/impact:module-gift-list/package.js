@@ -6,11 +6,18 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.3.1');
-  api.addFiles('impact:module-gift-list.js');
-});
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('impact:module-gift-list');
-  api.addFiles('impact:module-gift-list-tests.js');
+  api.use(['impact:impact'], ['client', 'server']);
+  api.use(['templating'], 'client');
+  api.imply(['impact:impact'], ['client', 'server']);
+
+  api.addFiles([
+    'client/views/giftContainer.html',
+    'client/views/giftList.html',
+    'client/views/giftItem.html'
+  ], 'client');
+
+  api.addFiles([
+    'client/test.js'
+  ], 'client');
 });

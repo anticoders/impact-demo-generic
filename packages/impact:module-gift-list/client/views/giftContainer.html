@@ -1,0 +1,12 @@
+<template name="prezenty">
+	<div class="window" id="prezenty">
+		<h2>Prezenty</h2>
+		{{#if loaded}}
+			<h5>Zamiast zwyczajowych bukietów kwiatów będziemy wdzięczni za butelkę dobrego wina, książkę, kawę... coś co umili nam wieczór :)</h5>
+			<p>Gdyby ktoś z Państwa zechciał obdarować nas prezentami, poniżej znajduje się lista która może ułatwić wybór. Gdyby byli Państwo zdecydowani na któryś z poniższych prezentów, uprzejmie prosimy o zarezerwowanie poprzez kliknięcie przycisku "Zarezerwuj" i podanie swojego adresu mailowego w celu potwierdzenia rezerwacji</p>
+		{{/if}}
+		<div id="gift-list">
+			{{> giftList}}
+		</div>
+	</div>
+</template>	

@@ -1,0 +1,10 @@
+<template name="giftList">
+		{{#if loading}}
+			<div class="loading">Ładowanie listy prezentów <span class="rotate">&lowast;</span></div>
+		{{/if}}
+		{{#each gifts}}
+		
+			{{> giftItem}}
+		
+		{{/each}}
+</template>
