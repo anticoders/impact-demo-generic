@@ -24,6 +24,12 @@ Modules.Blog.init({
   path:   '/news',
 });
 
+Modules.Forum.init({
+  name: 'forum',
+  title: 'Forum',
+  path: '/forum',
+});
+
 
 Router.map(function() {
 

@@ -12,11 +12,14 @@ Package.onUse(function (api, where) {
 
 
   api.addFiles([
-
+    'both/_index.js',
+    'both/init.js',
+    'both/initContent.js',
   ], ['client', 'server']);
 
   api.addFiles([
-
+    'client/content/index/index.html',
+    'client/content/index/index.js',
   ], 'client');
 
   api.addFiles([
