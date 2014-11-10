@@ -56,6 +56,8 @@ Package.onUse(function (api, where) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/lib/semantic.js',
+    'client/lib/semantic.css',
 
     'client/helpers/_helpers.js',
     'client/helpers/date.js',
