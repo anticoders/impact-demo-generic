@@ -8,37 +8,17 @@ Modules.Blog.init.views = function(m, params) {
       path: params.views.list.path,
       template: 'blog_list',
       layoutTemplate: params.views.list.layout + 'Layout',
-
-      onBeforeAction: function() {
-        this.subscribe('m:' + m.name + '-articles');
-      },
-
-      data: function() {
-        return {
-          m: m,
-          articles: m.Articles.find({published: true}),
-        };
-      },
+      controller: Modules.Blog.controllers.list,
+     
     });
 
     this.route(m.name + '_article', {
       path: params.views.show.path + '/:seo/:_id',
       template: 'blog_article',
       layoutTemplate: params.views.show.layout + 'Layout',
-      // yieldTemplates: {
-      //   'blog_articleToEdit': {to: 'top'},
-      // },
-      
-      onBeforeAction: function() {
-        this.subscribe('m:' + m.name + '-article', this.params._id);
-      },
-
-      data: function() {
-        return {
-          m: m,
-          article: m.Articles.findOne(this.params._id),
-        };
-      },
+      controller: Modules.Blog.controllers.article,
+ 
+     
     });
 
 

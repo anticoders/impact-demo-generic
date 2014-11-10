@@ -50,41 +50,14 @@ Modules.Blog.init.content = function(m, params) {
       path: '/content' + params.path + '/new',
       template: 'blog_edit',
       layoutTemplate: 'adminLayout',
-      action: function() {
-        var _id = m.Articles.insert({published: false});
-        location.replace(Router.path(m.name + '_edit', {_id: _id}));
-      },
-      // data: function() {
-      //   return {
-      //     impact: {
-      //       bulbs: 'Content',
-      //       bulb: bulbName,
-      //       subbulb: 'new',
-      //     },
-      //     m: m,
-      //   };
-      // },
+
     });
 
     this.route(params.name + '_edit', {
       path: '/content' + params.path + '/edit/:_id',
       template: 'blog_edit',
       layoutTemplate: 'adminLayout',
-
-      onBeforeAction: function() {
-        this.subscribe('m:' + m.name + '-article', this.params._id);
-      },
-
-      data: function() {
-        return {
-          impact: {
-            bulbs: 'Content',
-            bulb: bulbName,
-          },
-          m: m,
-          article: m.Articles.findOne({_id: this.params._id}),
-        };
-      },
+      controller: Modules.Blog.controllers.edit,
     });
 
 

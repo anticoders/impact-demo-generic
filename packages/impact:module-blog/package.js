@@ -20,14 +20,19 @@ Package.onUse(function (api, where) {
   ], ['client', 'server']);
 
   api.addFiles([
+    'client/content/index/_indexController.js',
     'client/content/index/index.html',
     'client/content/index/index.js',
+    'client/content/edit/_editController.js',
     'client/content/edit/edit.html',
     'client/content/edit/edit.js',
+    'client/content/new/_newController.js',
 
+    'client/views/article/_articleController.js',
     'client/views/article/article.html',
     'client/views/article/article.js',
     // 'client/views/articleToEdit.html',
+    'client/views/list/_listController.js',
     'client/views/list/list.html',
     'client/views/list/list.js',
 

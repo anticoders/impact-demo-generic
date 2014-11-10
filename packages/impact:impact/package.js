@@ -51,6 +51,7 @@ Package.onUse(function (api, where) {
   api.addFiles([
     'both/index.js',
     'both/model.js',
+    'both/moduleInstance.js',
 
     'both/utils/makeShallow.js',
   ], ['client', 'server']);
