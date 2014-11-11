@@ -11,7 +11,11 @@ Template.adminLayout.destroyed = function() {
 Template.adminLayout.helpers({
 
   parsedBulbs: function(x) {
-    if(! Panels[this.impact.bulbs]) {
+    if(!this.impact) {
+      console.log("NO IMPACT DATA DEFINED FOR THIS ROUTE!");
+      return;
+    }
+    if(!Panels[this.impact.bulbs]) {
       console.error('No such bulbs!', this.impact);
       return;
     }
