@@ -1,4 +1,4 @@
-Impact.controllers.site.inviteController = Impact.baseControllers.siteController.extend({
+Impact.controllers.site.inviteController = Impact.controllers.siteController.extend({
   data: { impact: {
     bulbs: 'Site',
     bulb: 'invite',

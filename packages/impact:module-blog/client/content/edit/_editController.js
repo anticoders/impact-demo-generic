@@ -1,8 +1,8 @@
 Modules.Blog.controllers.edit = function(m, params) {
-  return RouteController.extend({
+  return Impact.controllers.contentController.extend({
     
-      onBeforeAction: function() {
-        this.subscribe('m:' + m.name + '-article', this.params._id);
+      waitOn: function() {
+        return Meteor.subscribe(m.nameFor('article'), this.params._id);
       },
 
       data: function() {

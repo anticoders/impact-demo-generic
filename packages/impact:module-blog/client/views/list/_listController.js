@@ -1,8 +1,8 @@
 Modules.Blog.controllers.list = function(m, params) {
   return RouteController.extend({
     
-    onBeforeAction: function() {
-      this.subscribe('m:' + m.name + '-articles');
+    waitOn: function() {
+      return Meteor.subscribe(m.nameFor('articles'));
     },
 
     data: function() {

@@ -5,8 +5,8 @@ Impact.ModuleInstance = function(module, params) {
 
 _.extend(Impact.ModuleInstance.prototype, {
 
-  makeFullName: function(key) {
-    return 'm_' + this.name + '_' + key;
+  nameFor: function(key) {
+    return 'm_' + this.name + (key ? ('_' + key) : '');
   },
 
 

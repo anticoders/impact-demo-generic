@@ -1,4 +1,4 @@
-Impact.controllers.site.usersController = Impact.baseControllers.siteController.extend({
+Impact.controllers.site.usersController = Impact.controllers.siteController.extend({
   data: { impact: {
     bulbs: 'Site',
     bulb: 'users',

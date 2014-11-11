@@ -1,4 +1,4 @@
-Impact.controllers.impact.homeController = Impact.baseControllers.contentController.extend({
+Impact.controllers.impact.homeController = Impact.controllers.contentController.extend({
 
 });
 

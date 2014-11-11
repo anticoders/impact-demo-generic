@@ -49,8 +49,7 @@ Modules.Blog.init = function(params) {
   // ================================================================================
 
   Modules.Blog.init.db(m, params);
-  Modules.Blog.init.views(m, params);
-  Modules.Blog.init.content(m, params);
+  Modules.Blog.init.routes(m, params);
 
   if(Meteor.isServer) {
     Modules.Blog.init.privileges(m, params);
@@ -62,6 +61,7 @@ Modules.Blog.init = function(params) {
 
   }
   
+  return m;
 
 };
 

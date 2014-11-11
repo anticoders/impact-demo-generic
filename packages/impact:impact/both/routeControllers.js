@@ -4,9 +4,7 @@ Impact.controllers = {
   content: {},
   site: {},
   user: {},
-};
 
-Impact.baseControllers = {
   impactController: RouteController.extend({
     layoutTemplate: 'adminLayout',
   }),

@@ -1,7 +1,21 @@
 Modules.Blog.controllers.index = function(m, params) {
-  return RouteController.extend({
+  return Impact.controllers.contentController.extend({
     
-      
+    waitOn: function() {
+      return Meteor.subscribe(m.nameFor('allArticles'));
+    },
+
+    data: function() {
+      return {
+        impact: {
+          bulbs: 'Content',
+          bulb: m.nameFor(),
+          subbulb: 'list',
+        },
+        m: m,
+        articles: m.Articles.find({}),
+      };
+    },
 
   });
 };
