@@ -29,8 +29,10 @@ htmljs@1.0.2
 http@1.0.8
 id-map@1.0.1
 impact:bootstrap@0.1.0
+impact:entry@0.1.0
 impact:impact@0.1.0
 impact:module-blog@0.1.0
+impact:semantic@0.1.0
 iron:core@0.3.4
 iron:dynamic-template@0.4.1
 iron:layout@0.4.1

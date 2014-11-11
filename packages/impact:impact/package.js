@@ -52,13 +52,13 @@ Package.onUse(function (api, where) {
     'both/index.js',
     'both/model.js',
     'both/moduleInstance.js',
+    'both/routeControllers.js',
+    'both/routes.js',
 
     'both/utils/makeShallow.js',
   ], ['client', 'server']);
 
   api.addFiles([
-    'client/lib/semantic.js',
-    'client/lib/semantic.css',
 
     'client/helpers/_helpers.js',
     'client/helpers/date.js',
@@ -83,25 +83,16 @@ Package.onUse(function (api, where) {
     'client/layouts/user/userLayout.js',
     'client/layouts/user/userLayout.less',
 
-
-    'client/views/impact/home.html',
-    'client/views/impact/home.js',
-    'client/views/impact/_routes.js',
-
+    'client/views/content/_homeController.js',
     'client/views/content/home.html',
     'client/views/content/home.js',
-    'client/views/content/_routes.js',
 
-    'client/views/enter/forgot.html',
-    'client/views/enter/forgot.js',
-    'client/views/enter/initialize.html',
-    'client/views/enter/initialize.js',
-    'client/views/enter/invited.html',
-    'client/views/enter/invited.js',
-    'client/views/enter/login.html',
-    'client/views/enter/login.js',
-    'client/views/enter/_routes.js',
-    
+    'client/views/impact/_homeController.js',
+    'client/views/impact/home.html',
+    'client/views/impact/home.js',
+
+
+
     'client/views/user/home.html',
     'client/views/user/profile.html',
     'client/views/user/account.html',
@@ -116,15 +107,10 @@ Package.onUse(function (api, where) {
     'client/index/subscribe.js',
   ], 'client');
 
+
   api.addFiles([
     'server/greet.js',
-
-    'server/users/setup.js',
-    'server/users/publish.js',
-    'server/users/initialize.js',
-    'server/users/fakeData.js',
-
-    'server/widgets/publish.js',
+    'server/widgets.js',
   ], 'server');
 
 
