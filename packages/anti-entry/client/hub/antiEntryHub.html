@@ -1,0 +1,26 @@
+
+<template name="antiEntryHub">
+
+
+  <div class="anti-modal-box anti-modal-box-narrow">
+    <div class="anti-modal-header">
+      <span class="anti-modal-title">
+        {{#if modeIs 'logIn'}} Log In {{/if}}
+        {{#if modeIs 'signUp'}} Sign Up {{/if}}
+        {{#if modeIs 'forgotPassword'}} Forgot password {{/if}}
+        {{#if modeIs 'requestInvitation'}} Request invitation {{/if}}
+        {{#if modeIs 'receiveInvitation'}} Receive invitation {{/if}}
+      </span>
+      <span class="anti-modal-closer">&times;</span>
+    </div>
+
+    <div class="anti-modal-body">
+      {{#if modeIs 'logIn'}}              {{> UI.dynamic template=antiEntry.template.logIn}} {{/if}}
+      {{#if modeIs 'signUp'}}             {{> UI.dynamic template=antiEntry.template.signUp}} {{/if}}
+      {{#if modeIs 'forgotPassword'}}     {{> UI.dynamic template=antiEntry.template.forgotPassword}} {{/if}}
+      {{#if modeIs 'requestInvitation'}}  {{> UI.dynamic template=antiEntry.template.requestInvitation}} {{/if}}
+    </div>
+
+  </div>
+</template>
+

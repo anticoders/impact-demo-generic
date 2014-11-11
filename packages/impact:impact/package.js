@@ -6,7 +6,7 @@ Package.describe({
 
 Package.onUse(function (api, where) {
 
-  api.versionsFrom('0.9.0');
+  api.versionsFrom('0.9.3.1');
 
   api.use([
     'standard-app-packages',
@@ -15,12 +15,12 @@ Package.onUse(function (api, where) {
     'accounts-password',
     'showdown',
 
-    'iron:router@0.9.4',
+    'iron:router@1.0.0',
 
     'mrt:moment@2.8.1',
-    'mrt:timestamp@0.1.1',
+    // 'mrt:timestamp@0.1.1',
     'anti:fake@0.4.1',
-    'anti:entry@0.1.0',
+    'anti:entry@0.2.0-impact',
 
     'aldeed:collection2@2.2.0',
     'aldeed:simple-schema@1.0.3',
@@ -35,17 +35,17 @@ Package.onUse(function (api, where) {
     'accounts-password',
     'showdown',
 
-    'iron:router@0.9.4',
+    'iron:router',
 
-    'mrt:moment@2.8.1',
-    'mrt:timestamp@0.1.1',
-    'anti:fake@0.4.1',
-    'anti:entry@0.1.0',
+    'mrt:moment',
+    // 'mrt:timestamp@0.1.1',
+    'anti:fake',
+    'anti:entry',
     // 'anti:mark@0.6.0',
 
-    'aldeed:collection2@2.2.0',
-    'aldeed:simple-schema@1.0.3',
-    'aldeed:autoform@4.0.0-rc6',
+    'aldeed:collection2',
+    'aldeed:simple-schema',
+    'aldeed:autoform',
   ]);
 
   api.addFiles([
@@ -66,6 +66,7 @@ Package.onUse(function (api, where) {
     'client/helpers/mPathFor.js',
     'client/helpers/closestData.js',
 
+
     'client/layouts/_.lessimport',
     'client/layouts/index.less',
     'client/layouts/admin/adminLayout.html',
@@ -83,6 +84,7 @@ Package.onUse(function (api, where) {
     'client/layouts/user/userLayout.js',
     'client/layouts/user/userLayout.less',
 
+
     'client/views/content/_homeController.js',
     'client/views/content/home.html',
     'client/views/content/home.js',
@@ -91,20 +93,24 @@ Package.onUse(function (api, where) {
     'client/views/impact/home.html',
     'client/views/impact/home.js',
 
-
-
+    'client/views/user/_homeController.js',
+    'client/views/user/_profileController.js',
+    'client/views/user/_accountController.js',
     'client/views/user/home.html',
     'client/views/user/profile.html',
     'client/views/user/account.html',
-    'client/views/user/_routes.js',
-
+    
+    'client/views/site/_homeController.js',
+    'client/views/site/_usersController.js',
+    'client/views/site/_inviteController.js',
     'client/views/site/home.html',
     'client/views/site/users.html',
     'client/views/site/invite.html',
-    'client/views/site/_routes.js',
+
 
     'client/index/index.html',
     'client/index/subscribe.js',
+
   ], 'client');
 
 

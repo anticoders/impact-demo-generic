@@ -3,7 +3,7 @@ accounts-password@1.0.4
 aldeed:autoform@4.0.0-rc9
 aldeed:collection2@2.2.0
 aldeed:simple-schema@1.1.0
-anti:entry@0.1.1
+anti:entry@0.2.0-impact
 anti:fake@0.4.1
 anti:modals@0.3.0
 application-configuration@1.0.3
@@ -33,10 +33,14 @@ impact:entry@0.1.0
 impact:impact@0.1.0
 impact:module-blog@0.1.0
 impact:semantic@0.1.0
-iron:core@0.3.4
-iron:dynamic-template@0.4.1
-iron:layout@0.4.1
-iron:router@0.9.4
+iron:controller@1.0.0
+iron:core@1.0.0
+iron:dynamic-template@1.0.0
+iron:layout@1.0.0
+iron:location@1.0.1
+iron:middleware-stack@1.0.0
+iron:router@1.0.1
+iron:url@1.0.0
 jquery@1.0.1
 json@1.0.1
 launch-screen@1.0.0
@@ -53,7 +57,6 @@ mobile-status-bar@1.0.1
 mongo-livedata@1.0.6
 mongo@1.0.8
 mrt:moment@2.8.1
-mrt:timestamp@0.1.1
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
