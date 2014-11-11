@@ -9,6 +9,10 @@ _.extend(Impact.ModuleInstance.prototype, {
     return 'm_' + this.name + (key ? ('_' + key) : '');
   },
 
+  clientController: function(key, params) {
+    if(!Meteor.isClient) return;
+    return Modules[this.type].controllers[key](this, params);
+  },
 
 });
 

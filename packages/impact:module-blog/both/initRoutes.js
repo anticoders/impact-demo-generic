@@ -1,4 +1,6 @@
 Modules.Blog.init.routes = function(m, params) {
+
+
   Router.map(function () {
 
     // USER ROUTES //============================================================
@@ -7,14 +9,14 @@ Modules.Blog.init.routes = function(m, params) {
       path: params.views.list.path,
       template: 'blog_list',
       layoutTemplate: params.views.list.layout + 'Layout',
-      controller: Modules.Blog.controllers.list,
+      controller: m.clientController('list', params),
     });
 
     this.route(m.nameFor('article'), {
       path: params.views.show.path + '/:seo/:_id',
       template: 'blog_article',
       layoutTemplate: params.views.show.layout + 'Layout',
-      controller: Modules.Blog.controllers.article,
+      controller: m.clientController('article', params),
     });
 
 
@@ -42,18 +44,18 @@ Modules.Blog.init.routes = function(m, params) {
     this.route(m.nameFor('index'), {
       path: '/content' + params.path,
       template: 'blog_dashboard',
-      controller: Modules.Blog.controllers.index(m, params),
+      controller: m.clientController('index', params),
     });
 
     this.route(m.nameFor('new'), {
       path: '/content' + params.path + '/new',
-      controller: Modules.Blog.controllers.new(m, params),
+      controller: m.clientController('new', params),
     });
 
     this.route(m.nameFor('edit'), {
       path: '/content' + params.path + '/edit/:_id',
       template: 'blog_edit',
-      controller: Modules.Blog.controllers.edit(m, params),
+      controller: m.clientController('edit', params),
     });
 
 
