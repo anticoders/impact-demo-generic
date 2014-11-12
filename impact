@@ -1,4 +1,4 @@
 #!/bin/bash
 
-node ./.impact/index.js
+node ./.impact/index.js &
 ${@}
