@@ -7,7 +7,7 @@ Package.describe({
 
 Package.on_use(function (api, where) {
 
-  api.versionsFrom('METEOR@0.9.3');
+
 // email
 // tsega:bootstrap3-datetimepicker
 

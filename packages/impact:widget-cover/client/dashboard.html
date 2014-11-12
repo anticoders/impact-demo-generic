@@ -5,9 +5,13 @@
   </div>
 
   <div class="adminBox">
-    <div class="crater-form">
-      {{craterForm form}}
-    </div>
+    {{#autoForm schema=schema doc=doc}}
+      {{> afQuickField name="title"}}
+      {{> afQuickField name="image"}}
+      {{> afQuickField name="blurb"}}
+      {{> afQuickField name="menu"}}
+    {{/autoForm}}
+
   </div>
 
 

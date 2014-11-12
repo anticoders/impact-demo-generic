@@ -1,1 +1,4 @@
-Modules.Blog = {};
+Modules.Blog = {
+  controllers: {},
+};
+

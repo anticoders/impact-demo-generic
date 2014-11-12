@@ -34,12 +34,13 @@ Modules.Blog.init = function(params) {
   // Create instance
   // ================================================================================
 
-  M[params.name] = {
-    type: 'Blog',
-    name: params.name,
-    title: params.title,
-    params: params,
-  };
+  M[params.name] = new Impact.ModuleInstance(Modules.Blog, {
+    type:     'Blog',
+    name:     params.name,
+    title:    params.title,
+    params:   params,
+    routes:   {},
+  });
 
   var m = M[params.name];
 
@@ -48,8 +49,7 @@ Modules.Blog.init = function(params) {
   // ================================================================================
 
   Modules.Blog.init.db(m, params);
-  Modules.Blog.init.views(m, params);
-  Modules.Blog.init.content(m, params);
+  Modules.Blog.init.routes(m, params);
 
   if(Meteor.isServer) {
     Modules.Blog.init.privileges(m, params);
@@ -61,6 +61,7 @@ Modules.Blog.init = function(params) {
 
   }
   
+  return m;
 
 };
 
