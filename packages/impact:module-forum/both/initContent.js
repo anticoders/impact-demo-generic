@@ -28,10 +28,34 @@ Modules.Forum.init.content = function(m, params) {
     });
 
     this.route(params.name + '_new', {
-      
+      path: '/content' + params.path + '/new',
+      template: 'forum_edit',
+      layoutTemplate: 'adminLayout',
+      action: function() {
+        var _id = m.Topics.insert({published: false});
+        window.location.replace(Router.path(m.name + '_edit', {_id: _id}));
+      },      
     });
 
     this.route(params.name + '_edit', {
+      path: '/content' + params.path + '/edit/:_id',
+      template: 'forum_edit',
+      layoutTemplate: 'adminLayout',
+
+      onBeforeAction: function() {
+        this.subscribe('m:' + m.name + '-topic', this.params._id);
+      },
+
+      data: function() {
+        return {
+          impact: {
+            bulbs: 'Content',
+            bulb: bulbName,
+          },
+          m: m,
+          topic: m.Topics.findOne({_id: this.params._id}),
+        };
+      },
     });
   });
 };

@@ -30,12 +30,13 @@ Modules.Forum.init = function(params) {
   // Run initialization
   // ================================================================================
 
-//  Modules.Forum.init.db(m, params);
+  Modules.Forum.init.db(m, params);
 //  Modules.Forum.init.views(m, params);
   Modules.Forum.init.content(m, params);
 
   if(Meteor.isServer) {
-
+    Modules.Forum.init.publications(m, params);
+    Modules.Forum.init.privileges(m, params);
   }
 
   if(Meteor.isClient) {

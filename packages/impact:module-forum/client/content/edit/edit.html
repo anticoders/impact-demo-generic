@@ -1,0 +1,18 @@
+<template name="forum_edit">
+
+  asdasdasddasda
+  
+  {{ topic }}
+  
+  {{#with topic}}
+
+    EDIT TOPIC
+    {{#autoForm id="forum_edit_autoform" schema=schema doc=topic}}
+      {{> afQuickField name="title"}}
+      {{> afQuickField name="author"}}
+      {{> afQuickField name="published"}}
+    {{/autoForm}}
+
+  {{/with}}
+
+</template>
