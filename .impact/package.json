@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "underscore": "1.6.0",
+    "chokidar": "0.10.5"
+  }
+}
+
