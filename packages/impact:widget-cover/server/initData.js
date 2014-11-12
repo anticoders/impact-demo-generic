@@ -11,7 +11,7 @@ if(!Widgets.Settings.findOne('cover')) {
     _id: 'cover',
     pageTitle: 'Impact Light',
     title: 'Impact Light',
-    image: 'https://lorempixel.com/210/210/nature/2',
+    image: '/packages/impact_impact/files/impact128.png',
     blurb: 'This page is made with Impact, the awesome modular engine based on Meteor.js framework.',
     menu: [{
       label: 'Home',

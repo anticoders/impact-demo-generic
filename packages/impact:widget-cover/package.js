@@ -10,17 +10,18 @@ Package.on_use(function (api, where) {
   api.imply(['impact:impact'], ['client', 'server']);
 
 
-  api.add_files([
+  api.addFiles([
     'both/index.js',
+    'both/routes.js',
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
+    'client/_dashboardController.js',
     'client/dashboard.html',
     'client/dashboard.js',
-    'client/routes.js',
   ], 'client');
 
-  api.add_files([
+  api.addFiles([
     'server/initData.js',
   ], 'server');
 });
