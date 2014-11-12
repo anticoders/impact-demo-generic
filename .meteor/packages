@@ -2,13 +2,13 @@ impact:impact
 impact:entry
 impact:semantic
 impact:bootstrap
+impact:widget-cover
 
 
 impact:module-blog
 
 
 # impact:module-example
-# impact:widget-cover
 # impact:module-newsletter
 
 

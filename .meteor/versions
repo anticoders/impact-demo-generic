@@ -33,6 +33,7 @@ impact:entry@0.1.0
 impact:impact@0.1.0
 impact:module-blog@0.1.0
 impact:semantic@0.1.0
+impact:widget-cover@0.1.0
 iron:controller@1.0.0
 iron:core@1.0.0
 iron:dynamic-template@1.0.0
