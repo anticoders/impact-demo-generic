@@ -58,6 +58,7 @@ var rewrite = function(packageFolder, packageName) {
       {dir: 'server', mode: '"server"'},
       {dir: 'files', mode: '"client"'},
     ], function(chunk) {
+      if(!N.fs.existsSync(N.path.join(packageFolder, chunk.dir))) return;
       output.push('');
       output.push('  api.addFiles([');
       output = output.concat(loadAndSortFiles(N.path.join(packageFolder, chunk.dir), chunk.dir));
