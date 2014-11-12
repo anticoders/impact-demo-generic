@@ -9,7 +9,7 @@ Modules.Blog.controllers.edit = function(m, params) {
         return {
           impact: {
             bulbs: 'Content',
-            bulb: bulbName,
+            bulb: m.nameFor(),
           },
           m: m,
           article: m.Articles.findOne({_id: this.params._id}),

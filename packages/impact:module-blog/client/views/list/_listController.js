@@ -6,7 +6,6 @@ Modules.Blog.controllers.list = function(m, params) {
     },
 
     data: function() {
-      console.log("LIST DATA :::");
       return {
         m: m,
         articles: m.Articles.find({published: true}),
