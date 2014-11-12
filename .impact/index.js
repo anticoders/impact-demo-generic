@@ -123,8 +123,8 @@ var loadFilesFromDir = function(folder, prefix, partsCount, libCount, mainCount)
 
 
 var compareFiles = function(a, b) {
-  if(a.jsCount - b.jsCount) return -(a.jsCount - b.jsCount);
-  if(a.htmlCount - b.htmlCount) return a.htmlCount - b.htmlCount;
+  if(a.jsCount - b.jsCount) return a.jsCount - b.jsCount;
+  if(a.htmlCount - b.htmlCount) return -(a.htmlCount - b.htmlCount);
   if(a.libCount - b.libCount) return -(a.libCount - b.libCount);
   if(a.mainCount - b.mainCount) return a.mainCount - b.mainCount;
   if(a.partsCount - b.partsCount) return -(a.partsCount - b.partsCount);
