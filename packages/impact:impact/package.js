@@ -105,6 +105,7 @@ Package.onUse(function (api, where) {
     "client/helpers/_helpers.js",
     "client/helpers/closestData.js",
     "client/helpers/date.js",
+    "client/helpers/forms.js",
     "client/helpers/logic.js",
     "client/helpers/mPathFor.js",
     "client/index/subscribe.js",

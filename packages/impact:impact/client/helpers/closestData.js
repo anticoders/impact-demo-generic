@@ -9,3 +9,11 @@ Template.closestData = function(key) {
   return null;
 };
 
+Template.currentModule = function() {
+  var data = Template.closestData('m');
+  if(data && data.m) return data.m;
+  return null;
+};
+
+
+

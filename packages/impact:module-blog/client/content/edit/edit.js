@@ -13,8 +13,24 @@ Template.blog_edit.helpers({
   schema: function() {
     return schema;
   },
+
 });
 
+
+Template.blog_edit.events({
+  'keyup .__trigger': _.debounce(function(e, t) {
+    save(t.data.m, t.data.article, $(t.find('form')).formToJSON());
+  }, 250),
+
+});
+
+Template.blog_edit.destroyed = function() {
+  save(this.data.m, this.data.article, $(this.find('form')).formToJSON());
+};
+
+var save = function(m, old, document) {
+  m.Articles.update(old._id, {$set: document});
+};
 
 
 

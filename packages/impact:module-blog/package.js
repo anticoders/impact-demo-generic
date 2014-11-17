@@ -21,8 +21,8 @@ Package.onUse(function (api, where) {
   api.addFiles([
     "both/_index.js",
     "both/init.js",
-    "both/initDb.js",
-    "both/initRoutes.js",
+    "both/model.js",
+    "both/routes.js",
   ], ["client", "server"]);
 
 

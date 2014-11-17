@@ -1,19 +1,14 @@
 <template name="blog_edit">
 
-  {{#with article}}
 
 
-    EDIT ARTICLE
-    {{#autoForm id="blog_edit_autoform" schema=schema doc=article}}
-      {{> afQuickField name="title"}}
-      {{> afQuickField name="seo"}}
-      {{> afQuickField name="summary"}}
-      {{> afQuickField name="content"}}
-      {{> afQuickField name="published"}}
-    {{/autoForm}}
-
-
-  {{/with}}
+  {{#autoForm id="blog_edit_autoform" schema=schema doc=article}}
+    {{> afQuickField name="title"       class="__trigger"}}
+    {{> afQuickField name="seo"         class="__trigger"}}
+    {{> afQuickField name="summary"     class="__trigger" type="textarea"}}
+    {{> afQuickField name="content"     class="__trigger" type="textarea"}}
+    {{> afQuickField name="published"}}
+  {{/autoForm}}
 
 </template>
 

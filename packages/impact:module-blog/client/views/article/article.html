@@ -4,9 +4,9 @@
     <div>
       <small class="text-muted">{{date createdAt}}</small>
       <h1>{{#markdown}}{{title}}{{/markdown}}</h1>
-      <p class="lead">{{#unimark}}{{{summary}}}{{/unimark}}</p>
+      <p class="lead">{{#markdown}}{{{summary}}}{{/markdown}}</p>
       <hr/>
-      <div>{{#unimark}}{{{content}}}{{/unimark}}</div>
+      <div>{{#markdown}}{{{content}}}{{/markdown}}</div>
 
     </div>
   {{/with}}

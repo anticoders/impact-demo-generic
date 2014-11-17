@@ -12,7 +12,7 @@ Modules.Blog.controllers.edit = function(m, params) {
             bulb: m.nameFor(),
           },
           m: m,
-          article: m.Articles.findOne({_id: this.params._id}),
+          article: m.Articles.findOne(this.params._id),
         };
       },
 
