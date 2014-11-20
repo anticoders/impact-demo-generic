@@ -31,7 +31,7 @@ Template.newsletter_sendEmail.helpers({
     if (!!this.newsletter) {
       return this.newsletter.name;
     } else if (!!this.email) {
-      return Modules.Newsletter.Newsletters.findOne(this.email.newsletter).name;
+      return Template.currentModule().Newsletters.findOne(this.email.newsletter).name;
     } else {
       return "(error or something)";
     }
@@ -39,7 +39,7 @@ Template.newsletter_sendEmail.helpers({
 
   'subscriberCount': function () {
     if (!!this.newsletter)
-      return Modules.Newsletter.Subscribers
+      return Template.currentModule().Subscribers
                .find({newsletters: this.newsletter._id})
                .count();
     else
@@ -63,7 +63,7 @@ Template.newsletter_sendEmail.events = {
 
     if (!!this.email) {
     // updating
-      Modules.Newsletter.Emails
+      Template.currentModule().Emails
         .update(this.email._id, {$set: {
           title:      title,
           content:    content,
@@ -71,7 +71,7 @@ Template.newsletter_sendEmail.events = {
         }});      
     } else {
     // adding new 
-      var emailId = Modules.Newsletter.Emails
+      var emailId = Template.currentModule().Emails
         .insert({
           title:      title,
           content:    content,

@@ -1,7 +1,7 @@
 Template.newsletter_newsletterList.helpers({
 
   'newsletters': function () {
-    return this.data.m.Newsletters
+    return Template.currentModule().Newsletters
       .find({}, {sort: {createdAt: -1}})
       .map(function (each, index) {
         each.index = index + 1;  // human-readable index, starting from
@@ -10,7 +10,7 @@ Template.newsletter_newsletterList.helpers({
   },
 
   'subscriberCount': function (newsletterId) {
-    return m.Subscribers
+    return Template.currentModule().Subscribers
              .find({newsletters: newsletterId})
              .count();
   },

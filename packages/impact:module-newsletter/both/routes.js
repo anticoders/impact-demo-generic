@@ -56,7 +56,7 @@ Modules.Newsletter.init.routes = function(m, params) {
 
     this.route(m.nameFor('new'), {
       path: '/content' + params.path + '/new/:id',
-      controller: m.clientController('send', params),
+      controller: m.clientController('new', params),
     });
 
     this.route(m.nameFor('edit'), {

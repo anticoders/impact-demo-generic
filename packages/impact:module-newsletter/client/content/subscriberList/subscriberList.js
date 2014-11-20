@@ -1,7 +1,7 @@
 Template.newsletter_subscriberList.helpers({
 
   'subscribers': function () {
-    return Modules.Newsletter.Subscribers
+    return Template.currentModule().Subscribers
         .find({}, {sort: {updatedAt: -1, createdAt: -1}})  // updatedAt gets crazy eg with newsletter removal
         .map(function (each, index) {
           each.index = index + 1;  // human-readable index, starting from 1
@@ -19,7 +19,7 @@ Template.newsletter_subscriberList.events = {
 
   'click .name': function () {
     NewsletterHelpers.changeField(
-      Modules.Newsletter.Subscribers,
+      Template.currentModule().Subscribers,
       this._id, 
       'name',
       "subscriber name " + this.name)
@@ -27,7 +27,7 @@ Template.newsletter_subscriberList.events = {
 
   'click .email': function () {
     NewsletterHelpers.changeField(
-      Modules.Newsletter.Subscribers,
+      Template.currentModule().Subscribers,
       this._id, 
       'email',
       "the email address " + this.email)
@@ -45,7 +45,7 @@ Template.newsletter_subscriberList.events = {
 
     AntiModals.confirm(text, function (error, result) {
       if (!!result) {
-        Modules.Newsletter.Subscribers
+        Template.currentModule().Subscribers
           .remove({_id: subscriberId});
       }
     });

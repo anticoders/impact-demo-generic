@@ -1,7 +1,7 @@
 Template.newsletter_addSubscriber.helpers({
 
   'newsletters': function () {
-    return Modules.Newsletter.Newsletters
+    return Template.currentModule().Newsletters
       .find({}, {sort: {name: 1}});
   },
 
@@ -17,12 +17,12 @@ Template.newsletter_addSubscriber.events = {
 
     if (!email.length) return;
 
-    var subscriber = Modules.Newsletter.Subscribers
+    var subscriber = Template.currentModule().Subscribers
       .findOne({email: email});
 
     if (subscriber === undefined) {
       // new subscribers
-      Modules.Newsletter.Subscribers.insert({
+      Template.currentModule().Subscribers.insert({
         name: name,
         email: email,
         newsletters: [newsletter],
@@ -34,7 +34,7 @@ Template.newsletter_addSubscriber.events = {
     } else {
       // existing subscribers
 
-      Modules.Newsletter.Subscribers.update({
+      Template.currentModule().Subscribers.update({
         _id: subscriber._id
       }, {
         $set: {updatedAt: moment().valueOf()},

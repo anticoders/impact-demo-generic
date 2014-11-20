@@ -1,7 +1,7 @@
 Template.newsletter_emailList.helpers({
 
   'emails': function () {
-    return Modules.Newsletter.Emails
+    return Template.currentModule().Emails
       .find({}, {sort: {updatedAt: -1, createdAt: -1}})
       .map(function (each, index, all) {
         each.index = all.count() - index;  // human-readable index, starting from
@@ -10,7 +10,7 @@ Template.newsletter_emailList.helpers({
   },
 
   'newsletterName': function (newsletterId) {
-    var newsletter = Modules.Newsletter.Newsletters.findOne(newsletterId);
+    var newsletter = Template.currentModule().Newsletters.findOne(newsletterId);
     newsletter = newsletter || {name: "(removed)"};  // dealing with removed newsletters
     return newsletter.name;
   },
@@ -33,7 +33,7 @@ Template.newsletter_emailList.events = {
     AntiModals.confirm(text, function (error, result) {
 
       if (!!result) {
-        Modules.Newsletter.Emails.remove(emailId);
+        Template.currentModule().Emails.remove(emailId);
       }
 
     });
