@@ -1,1 +1,3 @@
-Modules.Forum = {};
+Modules.Forum = {
+  controllers: {},
+};

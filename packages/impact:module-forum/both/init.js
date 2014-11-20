@@ -17,12 +17,13 @@ Modules.Forum.init = function(params) {
   // Create instance
   // ================================================================================
 
-  M[params.name] = {
+  M[params.name] = new Impact.ModuleInstance(Modules.Forum, {
     type: 'Forum',
     name: params.name,
     title: params.title,
     params: params,
-  };
+    routes: {},
+  });
 
   var m = M[params.name];
 
@@ -31,12 +32,12 @@ Modules.Forum.init = function(params) {
   // ================================================================================
 
   Modules.Forum.init.db(m, params);
-//  Modules.Forum.init.views(m, params);
-  Modules.Forum.init.content(m, params);
+  Modules.Forum.init.routes(m, params);
 
   if(Meteor.isServer) {
     Modules.Forum.init.publications(m, params);
     Modules.Forum.init.privileges(m, params);
+    Modules.Forum.init.fake(m, params);
   }
 
   if(Meteor.isClient) {

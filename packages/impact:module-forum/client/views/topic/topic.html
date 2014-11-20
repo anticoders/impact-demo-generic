@@ -1,0 +1,13 @@
+<template name="forum_topic">
+  
+  {{#each posts}}
+    <a href="{{mPathFor 'topic'}}" class="content-list-item">
+      <div>
+        <small class="text-muted">{{date publishedAt}}</small>
+        <h3>{{#markdown}}{{title}}{{/markdown}}</h3>
+        <p>{{#markdown}}{{content}}{{/markdown}}</p>
+      </div>
+    </a>
+  {{/each}}
+
+</template>

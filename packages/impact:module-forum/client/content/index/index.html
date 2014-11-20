@@ -8,4 +8,20 @@
 
   <br/><br/>
   
+  <div class="adminBox">
+
+
+    {{#each topics}}
+      <a href="{{mPathFor 'topic'}}" class="adminTableRow">
+        <span class="adminTableRowTop">
+          <span class="">{{date createdAt}}</span>
+        </span>
+        <span class="adminTableRowContent">
+          <span class="">{{or title "[UNTITLED]"}}</span>
+        </span>
+      </a>
+    {{/each}}
+
+  </div>
+  
 </template>
