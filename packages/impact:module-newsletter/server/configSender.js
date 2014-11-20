@@ -1,3 +1,4 @@
+// or in both/init.js?
 
 Modules.Newsletter.from = "Please run Modules.Newsletter.configSender({from: ...})";
 

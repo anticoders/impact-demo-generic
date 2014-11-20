@@ -1,7 +1,7 @@
 Template.newsletter_newsletterList.helpers({
 
   'newsletters': function () {
-    return Modules.Newsletter.Newsletters
+    return this.data.m.Newsletters
       .find({}, {sort: {createdAt: -1}})
       .map(function (each, index) {
         each.index = index + 1;  // human-readable index, starting from
@@ -10,7 +10,7 @@ Template.newsletter_newsletterList.helpers({
   },
 
   'subscriberCount': function (newsletterId) {
-    return Modules.Newsletter.Subscribers
+    return m.Subscribers
              .find({newsletters: newsletterId})
              .count();
   },
@@ -35,9 +35,9 @@ Template.newsletter_newsletterList.events = {
 
   },
 
-  'click .name': function () {
+  'click .name': function (e, t) {
     NewsletterHelpers.changeField(
-      Modules.Newsletter.Newsletters,
+      t.data.m.Newsletters,
       this._id, 
       'name',
       "the newsletter " + this.name)

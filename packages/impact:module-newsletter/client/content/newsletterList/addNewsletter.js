@@ -1,12 +1,12 @@
 Template.newsletter_addNewsletter.events = {
 
-  "click #submit" : function () {
+  "click #submit" : function (e, t) {
 
     var name = $('#name').val();
 
     if (name.length) {
 
-      Modules.Newsletter.Newsletters.insert({
+      t.data.m.Newsletters.insert({
         name:      name,
         createdAt: moment().valueOf(),
         updatedAt: moment().valueOf(),

@@ -1,30 +1,82 @@
-/*
-  name          // string
+Modules.Newsletter.init.db = function(m, params) {
 
-  createdAt     // moment
-  updatedAt     // moment
-*/
-Modules.Newsletter.Newsletters = new Meteor.Collection('newsletter_newsletters', {});
+  //
+  // Newsletters
+  //
+  m.Newsletters = new Meteor.Collection(params.name + '_newsletters');
 
-/*
-  name          // string
-  email         // string
-  newsletters   // array of ObjectId [Newsletters]
+  m.Newsletters.attachSchema(new SimpleSchema({
+    name:        {type: String},
 
-  createdAt     // moment
-  updatedAt     // moment
-*/
-Modules.Newsletter.Subscribers = new Meteor.Collection('newsletter_subscribers', {});
+    createdAt: {
+      type: Date,
+      autoValue: function() {
+        if(this.isInsert) return new Date();
+        this.unset();
+      },
+    },
 
+    updatedAt: {
+      type: Date,
+      autoValue: function() {
+        return new Date();
+      },
+    },
+  }));
 
-/*
-  title         // string
-  content       // string
-  newsletter    // aObjectId [Newsletters]
-  sent:         // Boolean
+  //
+  // Subscribers
+  //
+  m.Subscribers = new Meteor.Collection(params.name + '_subscribers');
 
-  sentAt        // moment
-  createdAt     // moment
-  updatedAt     // moment
-*/
-Modules.Newsletter.Emails = new Meteor.Collection('newsletter_emails', {});
+  m.Subscribers.attachSchema(new SimpleSchema({
+    name:         {type: String},
+    email:        {type: String},    // regEx: SimpleSchema.RegEx.WeakEmail gives error
+    newsletters:  {type: [String]},  // QUESTION: foreign keys via strings?
+
+    createdAt: {
+      type: Date,
+      autoValue: function() {
+        if(this.isInsert) return new Date();
+        this.unset();
+      },
+    },
+
+    updatedAt: {
+      type: Date,
+      autoValue: function() {
+        return new Date();
+      },
+    },
+  }));
+
+  //
+  // Emails
+  //
+  m.Emails = new Meteor.Collection(params.name + '_emails');
+
+  m.Emails.attachSchema(new SimpleSchema({
+    title:          {type: String, optional: true},
+    content:        {type: String, optional: true},
+    newsletter:     {type: String},  // QUESTION: foreign keys via strings?
+    sent:           {type: Boolean},
+    sentAt:         {type: Date, optional: true}, 
+
+    createdAt: {
+      type: Date,
+      autoValue: function() {
+        if(this.isInsert) return new Date();
+        this.unset();
+      },
+    },
+
+    // QUESTION: how to not update it when onlu "sent" is changed?
+    updatedAt: {
+      type: Date,
+      autoValue: function() {
+        return new Date();
+      },
+    },
+  }));
+
+};

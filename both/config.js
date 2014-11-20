@@ -24,6 +24,11 @@ Modules.Blog.init({
   path:   '/news',
 });
 
+Modules.Newsletter.init({
+  name:   'newsletter',
+  title:  'Newsletter',
+  path:   '/newsletter',
+});
 
 Router.map(function() {
 
