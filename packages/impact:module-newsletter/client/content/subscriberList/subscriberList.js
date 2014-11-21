@@ -17,17 +17,17 @@ Template.newsletter_subscriberList.helpers({
 
 Template.newsletter_subscriberList.events = {
 
-  'click .name': function () {
+  'click .name': function (e, t) {
     NewsletterHelpers.changeField(
-      Template.currentModule().Subscribers,
+      t.data.m.Subscribers,
       this._id, 
       'name',
       "subscriber name " + this.name)
   },
 
-  'click .email': function () {
+  'click .email': function (e, t) {
     NewsletterHelpers.changeField(
-      Template.currentModule().Subscribers,
+      t.data.m.Subscribers,
       this._id, 
       'email',
       "the email address " + this.email)
@@ -38,14 +38,14 @@ Template.newsletter_subscriberList.events = {
     AntiModals.overlay('newsletter_modalSubscribedNewsletters', {data: that})
   },
 
-  "click .fa-remove" : function () {
+  "click .fa-remove" : function (e, t) {
 
     var text = "Do you really want to delete subscriber " + this.email + "?";
     var subscriberId = this._id;
 
     AntiModals.confirm(text, function (error, result) {
       if (!!result) {
-        Template.currentModule().Subscribers
+        t.data.m.Subscribers
           .remove({_id: subscriberId});
       }
     });

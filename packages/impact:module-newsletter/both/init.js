@@ -28,6 +28,8 @@ Modules.Newsletter.init = function(params) {
         layout:   params.views.emails.layout || params.layout || 'panels',
       },
     },
+
+    senderEmail: params.senderEmail || "Please set senderEmail",
   };
 
 
@@ -55,6 +57,7 @@ Modules.Newsletter.init = function(params) {
     Modules.Newsletter.init.privileges(m, params);
     Modules.Newsletter.init.publications(m, params);
     Modules.Newsletter.init.fake(m, params);
+    Modules.Newsletter.init.sender(m, params);
   }
 
   if(Meteor.isClient) {

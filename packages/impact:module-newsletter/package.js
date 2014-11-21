@@ -51,7 +51,6 @@ Package.onUse(function (api, where) {
 
 
   api.addFiles([
-    "server/configSender.js",
     "server/initFake.js",
     "server/initPrivilages.js",
     "server/initPublications.js",

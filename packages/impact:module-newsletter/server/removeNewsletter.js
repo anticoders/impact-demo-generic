@@ -1,6 +1,8 @@
 // server-side of newsletter removal,
 // as multi updates are not allowed on client-side
 
+// QUESTION: And how to access this collection server-side?
+
 Meteor.methods({
 
   removeNewsletter: function (newsletterId) {
