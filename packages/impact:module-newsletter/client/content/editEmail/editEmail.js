@@ -71,8 +71,6 @@ Template.newsletter_editEmail.helpers({
   },
 
   'subscriberCount': function () {
-    console.log('newsletterName this', this);
-    console.log('this.email.newsletter', this.email.newsletter);
     if (!!this.email) {
       return this.m.Subscribers
                .find({newsletters: this.email.newsletter})

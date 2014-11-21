@@ -16,7 +16,7 @@ Template.newsletter_emailList.helpers({
   },
 
   'length': function (arr) {
-    return arr.length;
+    return !!arr ? arr.length : 0;
   },
 
 });

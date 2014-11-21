@@ -2,7 +2,10 @@ Modules.Newsletter.controllers.emails = function(m, params) {
   return Impact.controllers.contentController.extend({
     
     waitOn: function() {
-      return Meteor.subscribe(m.nameFor('emails'));
+      return [
+               Meteor.subscribe(m.nameFor('emails')),
+               Meteor.subscribe(m.nameFor('newsletters')),
+             ];
     },
 
     data: function() {
