@@ -1,6 +1,6 @@
 <template name="newsletter_emailList">
 
-  <table class="table table-condensed table-hover">
+  <table class="ui compact table segment">
     <thead>
       <tr>
         <th>#</th>
@@ -22,11 +22,8 @@
           <td>{{length content}}</td>
           <td>{{newsletterName newsletter}}</td>
           <td>
-            {{#if sent}}
-              {{date sentAt}}
-            {{else}}
-              ({{date sentAt}})
-            {{/if}}
+            {{#if sent}}<i class="icon checkmark"></i>{{/if}}
+            {{date sentAt}}    
           </td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
