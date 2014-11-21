@@ -1,4 +1,4 @@
-Modules.Newsletter.controllers.edit = function(m, params) {
+Modules.Newsletter.controllers.editEmail = function(m, params) {
   return Impact.controllers.contentController.extend({
     
     waitOn: function() {

@@ -36,34 +36,34 @@ Modules.Newsletter.init.routes = function(m, params) {
 
 
 
-    this.route(m.nameFor('newsletters'), {
+    this.route(m.nameFor('newsletterList'), {
       path: '/content' + params.path,
       template: 'newsletter_newsletterList',
-      controller: m.clientController('newsletters', params),
+      controller: m.clientController('newsletterList', params),
     });
 
-    this.route(m.nameFor('subscribers'), {
+    this.route(m.nameFor('subscriberList'), {
       path: '/content' + params.path + '/subscribers',
       template: 'newsletter_subscriberList',
-      controller: m.clientController('subscribers', params),
+      controller: m.clientController('subscriberList', params),
     });
 
-    this.route(m.nameFor('emails'), {
+    this.route(m.nameFor('emailList'), {
       path: '/content' + params.path + '/emails',
       template: 'newsletter_emailList',
-      controller: m.clientController('emails', params),
+      controller: m.clientController('emailList', params),
     });
 
-    this.route(m.nameFor('new'), {
+    this.route(m.nameFor('newEmail'), {
       path: '/content' + params.path + '/new/:_id',
       template: 'newsletter_editEmail',
-      controller: m.clientController('new', params),
+      controller: m.clientController('newEmail', params),
     });
 
-    this.route(m.nameFor('edit'), {
+    this.route(m.nameFor('editEmail'), {
       path: '/content' + params.path + '/edit/:_id',
       template: 'newsletter_editEmail',
-      controller: m.clientController('edit', params),
+      controller: m.clientController('editEmail', params),
     });
 
   });

@@ -1,4 +1,4 @@
-Modules.Newsletter.controllers.newsletters = function(m, params) {
+Modules.Newsletter.controllers.newsletterList = function(m, params) {
   return Impact.controllers.contentController.extend({
     
     waitOn: function() {
