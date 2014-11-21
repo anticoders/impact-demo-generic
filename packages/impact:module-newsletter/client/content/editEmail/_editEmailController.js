@@ -4,7 +4,8 @@ Modules.Newsletter.controllers.edit = function(m, params) {
     waitOn: function() {
       return [
                Meteor.subscribe(m.nameFor('emails'), this.params._id),
-               Meteor.subscribe(m.nameFor('newsletters'))
+               Meteor.subscribe(m.nameFor('newsletters')),
+               Meteor.subscribe(m.nameFor('subscribers')),
              ];
     },
 
