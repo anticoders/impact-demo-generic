@@ -5,11 +5,12 @@ Template.newsletter_modalSubscribedNewsletters.helpers({
     var subscriberId = this._id;
     return Template.currentModule().Subscribers.findOne(subscriberId).newsletters
       .map(function (each) {
-        var newsletter = Template.currentModule().Newsletters.findOne(each);
+        var newsletterId = each.newsletterId;
+        var newsletter = Template.currentModule().Newsletters.findOne(newsletterId);
         newsletter = newsletter || {name: "(not existing)"};  // removable, but my current data is bad
         return {
           subscriberId: subscriberId,
-          newsletterId: each,
+          newsletterId: newsletterId,
           newsletterName: newsletter.name
         };
     });
@@ -28,7 +29,7 @@ Template.newsletter_modalSubscribedNewsletters.events = {
     AntiModals.confirm(text, function (error, result) {
       if (!!result) {
         Template.currentModule().Subscribers
-          .update(subscriberId, {$pull: {newsletters: newsletterId}});
+          .update(subscriberId, {$pull: {newsletters: {newsletterId: newsletterId}}});
       }
     });
 

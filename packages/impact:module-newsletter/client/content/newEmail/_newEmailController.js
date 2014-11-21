@@ -7,8 +7,8 @@ Modules.Newsletter.controllers.newEmail = function(m, params) {
 
     action: function() {
       var _id = m.Emails.insert({
-        newsletter: this.params._id,
-        sent: false,
+        newsletterId:  this.params._id,
+        sent:          false,
       });
 
       location.replace(

@@ -11,7 +11,7 @@ Template.newsletter_newsletterList.helpers({
 
   'subscriberCount': function (newsletterId) {
     return Template.currentModule().Subscribers
-             .find({newsletters: newsletterId})
+             .find({newsletters: {$elemMatch: {newsletterId: newsletterId}}})
              .count();
   },
 

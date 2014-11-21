@@ -16,11 +16,9 @@ Meteor.methods({
     Modules.Newsletter.Subscribers
       .update(
         {newsletters: newsletterId},
-        {$pull: {newsletters: newsletterId}},
+        {$pull: {newsletters: {newsletterId: newsletterId}}},
         {multi: true}
       );
-
-    // also remove subscribers with 0 subscriptions?
 
     return true;
 

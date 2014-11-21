@@ -32,7 +32,7 @@ Modules.Newsletter.init.db = function(m, params) {
   m.Subscribers.attachSchema(new SimpleSchema({
     name:         {type: String},
     email:        {type: String},    // regEx: SimpleSchema.RegEx.WeakEmail gives error
-    newsletters:  {type: [String]},  // QUESTION: foreign keys via strings?
+    "newsletters.$.newsletterId":  {type: String},
 
     createdAt: {
       type: Date,
@@ -58,7 +58,7 @@ Modules.Newsletter.init.db = function(m, params) {
   m.Emails.attachSchema(new SimpleSchema({
     title:          {type: String, optional: true},
     content:        {type: String, optional: true},
-    newsletter:     {type: String},  // QUESTION: foreign keys via strings?
+    newsletterId:   {type: String},  // QUESTION: foreign keys via strings?
     sent:           {type: Boolean},
     sentAt:         {type: Date, optional: true}, 
 

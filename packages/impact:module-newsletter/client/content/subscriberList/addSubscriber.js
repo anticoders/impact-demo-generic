@@ -13,7 +13,7 @@ Template.newsletter_addSubscriber.events = {
 
     var name = $('#inputName').val();
     var email = $('#inputEmail').val();
-    var newsletter = $('#inputNewsletter').val();
+    var newsletterId = $('#inputNewsletter').val();
 
     if (!email.length) return;
 
@@ -25,7 +25,7 @@ Template.newsletter_addSubscriber.events = {
       Template.currentModule().Subscribers.insert({
         name: name,
         email: email,
-        newsletters: [newsletter],
+        newsletters: [{newsletterId: newsletterId}],
 
         createdAt: moment().valueOf(),
         updatedAt: moment().valueOf(),
@@ -38,7 +38,7 @@ Template.newsletter_addSubscriber.events = {
         _id: subscriber._id
       }, {
         $set: {updatedAt: moment().valueOf()},
-        $addToSet: {newsletters: newsletter}
+        $push: {newsletters: {newsletterId: newsletterId}}  // I cannot just $addToSet - so there may be duplicated
       });
 
     }

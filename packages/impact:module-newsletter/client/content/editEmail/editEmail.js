@@ -67,7 +67,7 @@ Template.newsletter_editEmail.helpers({
 
   'newsletterName': function (x) {
     if (!!this.email) {
-      return this.m.Newsletters.findOne(this.email.newsletter).name;
+      return this.m.Newsletters.findOne(this.email.newsletterId).name;
     } else {
       return "(error or something)";
     }
@@ -76,7 +76,7 @@ Template.newsletter_editEmail.helpers({
   'subscriberCount': function () {
     if (!!this.email) {
       return this.m.Subscribers
-               .find({newsletters: this.email.newsletter})
+               .find({newsletters: {$elemMatch: {newsletterId: this.email.newsletterId}}})
                .count();
     } else {
       return "0";

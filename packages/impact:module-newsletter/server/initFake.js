@@ -29,10 +29,14 @@ Modules.Newsletter.init.fake = function(m, params) {
   _.times(40, function() {
 
     var fakeUser = Fake.user();
+
+    var newsletters = _.sample(newsletterIds, _.sample(counts_distribution))
+                       .map(function (x) {return {newsletterId: x}; }); 
+
     m.Subscribers.insert({
       name: fakeUser.fullname,
       email: fakeUser.email,
-      newsletters: _.sample(newsletterIds, _.sample(counts_distribution)),
+      newsletters: newsletters,
 
       createdAt: moment().valueOf(),
       updatedAt: moment().valueOf(),
@@ -43,12 +47,12 @@ Modules.Newsletter.init.fake = function(m, params) {
 
   _.times(20, function() {
 
-    var sentAt = moment().valueOf() + 1000 * 60 * 60 * 24 * 3 * (Math.random() - 0.5);
+    var sentAt = new Date (moment().valueOf() + 1000 * 60 * 60 * 24 * 3 * (Math.random() - 0.5));
 
     m.Emails.insert({
-      title:       Fake.sentence(_.sample([2, 2, 3])),
-      content:     Fake.sentence(_.sample([20, 40, 60, 100])),
-      newsletter:  _.sample(newsletterIds),
+      title:         Fake.sentence(_.sample([2, 2, 3])),
+      content:       Fake.sentence(_.sample([20, 40, 60, 100])),
+      newsletterId:  _.sample(newsletterIds),
 
       sentAt:    sentAt,
       sent:      sentAt < moment().valueOf(),

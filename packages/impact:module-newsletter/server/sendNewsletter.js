@@ -22,7 +22,7 @@ Modules.Newsletter.init.sender = function(m, params) {
       console.log("email data", emailData);
 
       var emailAddresses = m.Subscribers
-        .find({newsletters: emailData.newsletter})
+        .find({newsletters: {$elemMatch: {newsletterId: emailData.newsletterId}}})
         .map(function (each) { return each.email; });
 
       this.unblock();
