@@ -28,6 +28,9 @@ Template.newsletter_editEmail.destroyed = function() {
 };
 
 var save = function(m, old, document) {
+  if (!!document.sentAt) {
+    document.sentAt = new Date(document.sentAt);
+  }
   m.Emails.update(old._id, {$set: document});
 };
 
