@@ -1,31 +1,31 @@
-Template.newsletter_sendEmail.rendered = function () {
+Template.newsletter_editEmail.rendered = function () {
 
     // initializing datepicker
     $('.datetimepicker').datetimepicker({
       language: 'en'
     });
 
-    var email = this.data.email;
+    // var email = this.data.email;
 
-    // filling data if it is edit (i.e. not a new email)
-    if (!!email) {
-      $('#inputTitle').val(email.title);
-      $('#inputContent').val(email.content);
-      $('#inputWhen').data("DateTimePicker").setDate(new Date(email.sentAt));
-    }
+    // // filling data if it is edit (i.e. not a new email)
+    // if (!!email) {
+    //   $('#inputTitle').val(email.title);
+    //   $('#inputContent').val(email.content);
+    //   $('#inputWhen').data("DateTimePicker").setDate(new Date(email.sentAt));
+    // }
 
-    // disabling if already sent
-    if (!!email && email.sent) {
-      $('#inputTitle').prop('disabled', true);
-      $('#inputContent').prop('disabled', true);
-      $('#inputWhen').data("DateTimePicker").disable();
-      $('#submit').prop('disabled', true);
-    }
+    // // disabling if already sent
+    // if (!!email && email.sent) {
+    //   $('#inputTitle').prop('disabled', true);
+    //   $('#inputContent').prop('disabled', true);
+    //   $('#inputWhen').data("DateTimePicker").disable();
+    //   $('#submit').prop('disabled', true);
+    // }
 
 }
 
 
-Template.newsletter_sendEmail.helpers({
+Template.newsletter_editEmail.helpers({
 
   'newsletterName': function (x) {
     if (!!this.newsletter) {
@@ -49,7 +49,7 @@ Template.newsletter_sendEmail.helpers({
 });
 
 
-Template.newsletter_sendEmail.events = {
+Template.newsletter_editEmail.events = {
 
   "click #submit" : function () {
 

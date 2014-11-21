@@ -2,7 +2,7 @@ Modules.Newsletter.controllers.new = function(m, params) {
   return Impact.controllers.contentController.extend({
 
     action: function() {
-      var _id = m.Articles.insert({
+      var _id = m.Emails.insert({
         newsletter: this.params._id,
         sent: false,
       });

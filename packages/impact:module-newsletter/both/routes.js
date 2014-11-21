@@ -55,12 +55,13 @@ Modules.Newsletter.init.routes = function(m, params) {
     });
 
     this.route(m.nameFor('new'), {
-      path: '/content' + params.path + '/new/:id',
+      path: '/content' + params.path + '/new/:_id',
+      template: 'newsletter_editEmail',
       controller: m.clientController('new', params),
     });
 
     this.route(m.nameFor('edit'), {
-      path: '/content' + params.path + '/edit/:id',
+      path: '/content' + params.path + '/edit/:_id',
       template: 'newsletter_editEmail',
       controller: m.clientController('edit', params),
     });

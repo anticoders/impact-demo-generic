@@ -2,7 +2,10 @@ Modules.Newsletter.controllers.edit = function(m, params) {
   return Impact.controllers.contentController.extend({
     
     waitOn: function() {
-      return Meteor.subscribe(m.nameFor('emails'), this.params._id);
+      return [
+               Meteor.subscribe(m.nameFor('emails'), this.params._id),
+               Meteor.subscribe(m.nameFor('newsletters'))
+             ];
     },
 
     data: function() {
@@ -12,7 +15,7 @@ Modules.Newsletter.controllers.edit = function(m, params) {
           bulb: m.nameFor(),
         },
         m: m,
-        email: m.Emails.findOne(this.params._id),
+        email: m.Emails.findOne(this.params._id)
       };
     },
 
