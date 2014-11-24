@@ -25,7 +25,15 @@
           <td>{{index}}</td>
           <td><span class='name'>{{name}}</span></td>
           <td><span class='email'>{{email}}</span></td>
-          <td><span class='newsletters'>{{length newsletters}}</span></td>
+          <td>
+            {{#if length newsletters}}
+              {{#each newsletter_names newsletters}}
+                <div class="ui blue label">{{.}}</div>
+              {{/each}}
+            {{else}}
+              <div class="ui red label">(no subscriptions)</div>
+            {{/if}}
+          </td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>
           <td>

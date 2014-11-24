@@ -13,6 +13,13 @@ Template.newsletter_subscriberList.helpers({
     return arr.length;
   },
 
+  'newsletter_names': function (newsletters) {
+    return newsletters
+      .map(function (each) {
+        return Template.currentModule().Newsletters.findOne(each.newsletterId).name;
+      });
+  },
+
 });
 
 Template.newsletter_subscriberList.events = {
