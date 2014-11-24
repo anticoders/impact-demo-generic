@@ -1,3 +1,8 @@
+Template.newsletter_addSubscriber.rendered = function () {
+  $('.ui.dropdown').dropdown();
+}
+
+
 Template.newsletter_addSubscriber.helpers({
 
   'newsletters': function () {

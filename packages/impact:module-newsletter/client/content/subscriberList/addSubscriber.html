@@ -1,21 +1,26 @@
 <template name="newsletter_addSubscriber">
-  <form class="form-inline">
-    <div class="form-group">
-      <label class="sr-only" for="inputName">Name</label>
-      <input type="text" class="form-control" id="inputName" placeholder="Name">
+
+  <div class="ui form">
+    <div class="field">
+      <div class="four fields">
+        <div class="field">
+          <input type="text" name="first-name" placeholder="Name" id="inputName">
+        </div>
+        <div class="field">
+          <input type="text" name="last-name" placeholder="Email address" id="inputEmail">
+        </div>
+        <div class="ui selection simple dropdown">
+          <input type="hidden" name="gender">
+          <div class="default text">Newsletter</div>
+          <i class="dropdown icon"></i>
+          <div class="menu" id="inputNewsletter">
+            <div class="item" data-value="male">Male</div>
+            <div class="item" data-value="female">Female</div>
+          </div>
+        </div>
+        <div class="ui submit primary button">Add subscription</div>
+      </div>
     </div>
-    <div class="form-group">
-      <label class="sr-only" for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="inputEmail">Newsletter</label>
-      <select id="inputNewsletter" class="form-control" placeholder="Select newsletter">
-        {{#each newsletters}}
-          <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-      </select>
-    </div>
-    <input type="button" class="btn btn-primary" id="submit" value="Add subscription"/>
-  </form>
+  </div>
+
 </template>
