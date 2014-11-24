@@ -33,6 +33,9 @@
             {{else}}
               <div class="ui red label">(no subscriptions)</div>
             {{/if}}
+            {{#if length_more_than_5 newsletters}}
+              <div class="ui green label">(more)</div>
+            {{/if}}
           </td>
           <td>{{date createdAt}}</td>
           <td>{{date updatedAt}}</td>

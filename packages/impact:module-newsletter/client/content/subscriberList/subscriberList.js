@@ -13,11 +13,18 @@ Template.newsletter_subscriberList.helpers({
     return arr.length;
   },
 
+  'length_more_than_5': function (arr) {
+    return arr.length > 5;
+  },
+
   'newsletter_names': function (newsletters) {
-    return newsletters
-      .map(function (each) {
-        return Template.currentModule().Newsletters.findOne(each.newsletterId).name;
-      });
+    return _.chain(newsletters)
+              .map(function (each) {
+                return Template.currentModule().Newsletters.findOne(each.newsletterId);
+              })
+              .pluck('name')
+              .first(5)
+              .value();
   },
 
 });
