@@ -1,5 +1,9 @@
 <template name="newsletter_editEmail">
   
+  <div class="adminHeader">
+    <div class="adminTitle">Email</div>
+  </div>
+
   <h2>Newsletter: {{newsletterName}} ({{subscriberCount}} subscribers)</h2>
 
   {{#autoForm id="email_edit_autoform" schema=schema doc=email}}
