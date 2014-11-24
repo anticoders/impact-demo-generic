@@ -32,7 +32,9 @@ Modules.Newsletter.init.db = function(m, params) {
   m.Subscribers.attachSchema(new SimpleSchema({
     name:         {type: String},
     email:        {type: String},    // regEx: SimpleSchema.RegEx.WeakEmail gives error
-    "newsletters.$.newsletterId":  {type: String},
+    newsletters:  {type: [new SimpleSchema({
+      newsletterId: {type: String}
+    })]},
 
     createdAt: {
       type: Date,
