@@ -53,7 +53,7 @@ Template.newsletter_subscriberList.events = {
     AntiModals.overlay('newsletter_modalSubscribedNewsletters', {data: _.extend(t, {dataSubscriber: that})});
   },
 
-  "click .fa-remove" : function (e, t) {
+  "click .remove.circle " : function (e, t) {
 
     var text = "Do you really want to delete subscriber " + this.email + "?";
     var subscriberId = this._id;

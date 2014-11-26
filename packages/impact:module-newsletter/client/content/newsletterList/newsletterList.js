@@ -21,7 +21,7 @@ Template.newsletter_newsletterList.events = {
 
   //"click .fa.envelope-o" via link/routing
 
-  "click .fa-remove" : function () {
+  "click .remove.circle" : function () {
 
     var text = "Do you really want to delete newsletter " + this.name + "?";
     var newsletterId = this._id;

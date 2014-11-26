@@ -25,7 +25,7 @@ Template.newsletter_emailList.events = {
 
   // "click .fa-edit" -> via link
 
-  "click .fa-remove" : function () {
+  "click .remove.circle" : function () {
 
     var text = "Do you really want to delete email " + this.title + "?";
     var emailId = this._id;
