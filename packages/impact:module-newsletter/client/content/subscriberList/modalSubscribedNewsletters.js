@@ -1,19 +1,22 @@
+Template.newsletter_modalSubscribedNewsletters.rendered = function () {
+  $('.ui.checkbox').checkbox();
+};
+
+
 Template.newsletter_modalSubscribedNewsletters.helpers({
 
   'newslettersEnriched': function () {
 
     var that = this;
     var subscriberId = this.dataSubscriber._id;
-    return this.data.m.Subscribers.findOne(subscriberId).newsletters
-      .map(function (each) {
-        var newsletterId = each.newsletterId;
-        var newsletter = that.data.m.Newsletters.findOne(newsletterId);
-        newsletter = newsletter || {name: "(not existing)"};  // removable, but my current data is bad
-        return {
-          subscriberId: subscriberId,
-          newsletterId: newsletterId,
-          newsletterName: newsletter.name
-        };
+    var subscribedNewsletterIds = _.pluck(this.dataSubscriber.newsletters, 'newsletterId');
+    return this.data.m.Newsletters.find()
+             .map(function (each) {
+              var subscribed = _.contains(subscribedNewsletterIds, each._id);
+              return _.extend(each, {
+                       subscriberId: subscriberId,
+                       subscribed:   subscribed,
+                     });
     });
   },
 
@@ -22,18 +25,27 @@ Template.newsletter_modalSubscribedNewsletters.helpers({
 
 Template.newsletter_modalSubscribedNewsletters.events = {
 
-  "click .fa-remove" : function (e, t) {
+  "change .checkbox" : function (e, t) {
 
-    var text = "Do you really want to delete this subscription?";
-    var newsletterId = this.newsletterId;
+    // QUESTION: Is there a way to directly check if checkbox is checked or unchecked?
+
+    var newsletterId = this._id;
     var subscriberId = this.subscriberId;
 
-    AntiModals.confirm(text, function (error, result) {
-      if (!!result) {
-        t.data.data.m.Subscribers  // yes, data.data
-          .update(subscriberId, {$pull: {newsletters: {newsletterId: newsletterId}}});
-      }
-    });
+    if (this.subscribed) {
+
+      // yes, yes: data.data
+      t.data.data.m.Subscribers
+        .update(subscriberId, {$pull: {newsletters: {newsletterId: newsletterId}}});
+
+    } else {
+
+      t.data.data.m.Subscribers
+        .update(subscriberId, {$push: {newsletters: {newsletterId: newsletterId}}});
+
+    }
+
+    this.subscribed = !this.subscribed;
 
   }
 
