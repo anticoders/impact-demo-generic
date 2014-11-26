@@ -1,6 +1,7 @@
 Template.newsletter_addSubscriber.rendered = function () {
+  console.log("This should activate dropdowns...");  // QUESTION: Any idea why it does not work?
   $('.ui.dropdown').dropdown();
-}
+};
 
 
 Template.newsletter_addSubscriber.helpers({
