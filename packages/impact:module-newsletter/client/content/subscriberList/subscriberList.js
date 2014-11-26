@@ -47,9 +47,10 @@ Template.newsletter_subscriberList.events = {
       "the email address " + this.email)
   },
 
-  'click .newsletters': function () {
+  'click .newsletters': function (e, t) {
+    // QUESTION: Is this how I should transfer data?
     var that = this;
-    AntiModals.overlay('newsletter_modalSubscribedNewsletters', {data: that})
+    AntiModals.overlay('newsletter_modalSubscribedNewsletters', {data: _.extend(t, {dataSubscriber: that})});
   },
 
   "click .fa-remove" : function (e, t) {
