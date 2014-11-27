@@ -88,6 +88,7 @@ Package.onUse(function (api, where) {
     "client/layouts/user/userLayout.less",
     "client/layouts/_.lessimport",
     "client/layouts/index.less",
+    "client/lib/autogrow.js",
     "client/layouts/admin/adminLayout.js",
     "client/layouts/enter/enterLayout.js",
     "client/layouts/intro/introLayout.js",

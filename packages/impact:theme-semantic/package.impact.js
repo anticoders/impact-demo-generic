@@ -1,6 +1,6 @@
 Package.describe({
   summary:  'Impact (alpha) Semantic UI package',
-  name:     'impact:semantic',
+  name:     'impact:theme-semantic',
   version:  '0.1.0',
 });
 

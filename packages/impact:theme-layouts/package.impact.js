@@ -1,6 +1,6 @@
 Package.describe({
   summary:  'Impact (alpha)',
-  name:     'impact:bootstrap',
+  name:     'impact:theme-layouts',
   version:  '0.1.0',
 });
 
