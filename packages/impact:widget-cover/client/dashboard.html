@@ -1,18 +1,17 @@
 <template name="cover_dashboard">
 
-  <div class="adminHeader">
-    <div class="adminTitle">Cover settings</div>
+  <div class="ui header">
+    Cover settings
   </div>
 
-  <div class="adminBox">
-    {{#autoForm schema=schema doc=doc}}
-      {{> afQuickField name="title"}}
-      {{> afQuickField name="image"}}
-      {{> afQuickField name="blurb"}}
-      {{> afQuickField name="menu"}}
-    {{/autoForm}}
+  <div class="ui divider"></div>
 
-  </div>
+  {{#autoForm schema=schema doc=doc class="ui form"}}
+    {{> afQuickField name="title"  template="semantic"}}
+    {{> afQuickField name="image"  template="semantic"}}
+    {{> afQuickField name="blurb"  template="semantic"}}
+    {{> afQuickField name="menu"   template="semantic"}}
+  {{/autoForm}}
 
 
 </template>
