@@ -13,7 +13,9 @@ Modules.Blog.controllers.index = function(m, params) {
           subbulb: 'list',
         },
         m: m,
-        articles: m.Articles.find({}),
+        articles: m.Articles.find({}, {
+          sort: {createdAt: -1}
+        }),
       };
     },
 

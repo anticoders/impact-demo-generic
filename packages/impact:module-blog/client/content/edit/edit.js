@@ -18,6 +18,18 @@ Template.blog_edit.helpers({
 
 
 Template.blog_edit.events({
+  'click .__publish': function(e, t) {
+    t.data.m.Articles.update(t.data.article._id, {$set: {
+      published: true,
+    }});
+  },
+
+  'click .__unpublish': function(e, t) {
+    t.data.m.Articles.update(t.data.article._id, {$set: {
+      published: false,
+    }});
+  },
+
   'keyup .__trigger': _.debounce(function(e, t) {
     save(t.data.m, t.data.article, $(t.find('form')).formToJSON());
   }, 250),
