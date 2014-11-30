@@ -3,24 +3,45 @@
   <div class="adminHeader">
     <div class="adminTitle">Forum topics</div>
   </div>
-
-  <a href="{{mPathFor 'new'}}" class="adminMenuButton">New topic</a>
+  
+  <table class="ui celled striped table">
+    <thead>
+      <tr>
+        <th colspan="2">
+          Impact forum
+        </th>
+        <th>
+          Posts
+        </th>
+        <th>
+          Last Post
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each topics}}
+        <tr>
+          <td>
+            <i class="folder icon"></i>
+          </td>
+          <td>
+            <a href="{{mPathFor 'topic'}}">
+              {{or title "[UNTITLED]"}}</a>
+          </td>
+          <td>{{or posts.length "0"}}</td>
+          <td class="right aligned">TODO helper</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  
+    <a href="{{mPathFor 'new'}}" class="adminMenuButton">New topic</a>
 
   <br/><br/>
   
   <div class="adminBox">
 
 
-    {{#each topics}}
-      <a href="{{mPathFor 'topic'}}" class="adminTableRow">
-        <span class="adminTableRowTop">
-          <span class="">{{date createdAt}}</span>
-        </span>
-        <span class="adminTableRowContent">
-          <span class="">{{or title "[UNTITLED]"}}</span>
-        </span>
-      </a>
-    {{/each}}
 
   </div>
   

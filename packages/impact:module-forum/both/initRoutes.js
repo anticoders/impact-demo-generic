@@ -1,9 +1,5 @@
 Modules.Forum.init.routes = function(m, params) {
   
-
-  
-
-
   Panels.Content.moduleBulbs.push({
     title: params.title,
     name: m.nameFor(),

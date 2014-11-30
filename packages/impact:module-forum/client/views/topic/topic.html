@@ -1,13 +1,25 @@
 <template name="forum_topic">
   
   {{#each posts}}
-    <a href="{{mPathFor 'topic'}}" class="content-list-item">
-      <div>
-        <small class="text-muted">{{date publishedAt}}</small>
-        <h3>{{#markdown}}{{title}}{{/markdown}}</h3>
-        <p>{{#markdown}}{{content}}{{/markdown}}</p>
-      </div>
-    </a>
+    <table class="ui celled striped table">
+      <thead>
+        <tr>
+          <th colspan="2">
+            <small class="text-muted">{{date publishedAt}}</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>
+              <img src="/packages/impact_module-forum/files/avatar.png"/>
+            </td>
+            <td>
+              {{#markdown}}{{content}}{{/markdown}}
+            </td>
+          </tr>
+      </tbody>
+    </table>
   {{/each}}
 
 </template>

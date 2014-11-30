@@ -1,14 +1,13 @@
 <template name="forum_edit">
-  
-  {{#with topic}}
 
     EDIT TOPIC
-    {{#autoForm id="forum_edit_autoform" schema=schema doc=topic}}
-      {{> afQuickField name="title"}}
-      {{> afQuickField name="author"}}
-      {{> afQuickField name="published"}}
+    {{#autoForm id="forum_edit_autoform" collection=collection schema=schema doc=topic type="update"}}
+      <fieldset>
+        {{> afQuickField name="title"}}
+        {{> afQuickField name="author"}}
+        {{> afQuickField name="published"}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
     {{/autoForm}}
-
-  {{/with}}
-
+    
 </template>
