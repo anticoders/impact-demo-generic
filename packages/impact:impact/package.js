@@ -79,15 +79,13 @@ Package.onUse(function (api, where) {
     "client/views/user/home.html",
     "client/views/user/profile.html",
     "client/index/index.html",
-    "client/layouts/admin/adminHeader.less",
     "client/layouts/admin/adminLayout.less",
-    "client/layouts/admin/adminMenu.less",
-    "client/layouts/admin/adminTable.less",
     "client/layouts/enter/enterLayout.less",
     "client/layouts/intro/introLayout.less",
     "client/layouts/user/userLayout.less",
     "client/layouts/_.lessimport",
     "client/layouts/index.less",
+    "client/lib/autogrow.js",
     "client/layouts/admin/adminLayout.js",
     "client/layouts/enter/enterLayout.js",
     "client/layouts/intro/introLayout.js",
@@ -119,6 +117,7 @@ Package.onUse(function (api, where) {
 
 
   api.addFiles([
+    "files/subtle/kindajean.png",
     "files/impact128.png",
   ], "client");
 

@@ -1,15 +1,14 @@
 impact:impact
 impact:entry
-impact:semantic
-impact:bootstrap
+impact:theme-basic
 impact:widget-cover
 
 
 impact:module-blog
-
+impact:module-newsletter
 
 # impact:module-example
-impact:module-newsletter
+
 
 
 

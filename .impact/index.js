@@ -90,10 +90,17 @@ var loadFilesFromDir = function(folder, prefix, partsCount, libCount, mainCount)
   // console.log("", folder);
   var array = [];
   _.each(N.fs.readdirSync(folder), function(file) {
-    // console.log("    ", file);
+    
+    // Ignore hidden files
     if(file.indexOf('.') === 0) return;
+
+    // Ignore ignored files
+    if(file.indexOf('-ignore') !== -1) return;
+
+
     if(N.fs.lstatSync(N.path.join(folder, file)).isDirectory()) {
 
+      // Fetch files from directory
       array = array.concat(loadFilesFromDir(
         N.path.join(folder, file),
         N.path.join(prefix, file),
@@ -104,6 +111,7 @@ var loadFilesFromDir = function(folder, prefix, partsCount, libCount, mainCount)
 
     } else {
 
+      // Fetch a single file
       var filePieces = file.split('.');
       var first = filePieces[0];
       var last = filePieces[filePieces.length - 1];
