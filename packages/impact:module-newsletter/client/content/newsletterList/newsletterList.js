@@ -2,11 +2,7 @@ Template.newsletter_newsletterList.helpers({
 
   'newsletters': function () {
     return Template.currentModule().Newsletters
-      .find({}, {sort: {createdAt: -1}})
-      .map(function (each, index) {
-        each.index = index + 1;  // human-readable index, starting from
-        return each;
-      });
+      .find({}, {sort: {createdAt: -1}});
   },
 
   'subscriberCount': function (newsletterId) {
