@@ -27,6 +27,12 @@ Template.newsletter_subscriberList.helpers({
 
 Template.newsletter_subscriberList.events = {
 
+  "click #addSubscriber" : function (e, t) {
+
+    // modal with edit?
+    
+  },
+
   'click .name': function (e, t) {
     NewsletterHelpers.changeField(
       t.data.m.Subscribers,
